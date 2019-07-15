@@ -1,0 +1,511 @@
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+/*公共样式*/
+html{
+    font-size: 26.67vw;
+}
+.nav{
+    margin-top: 10px;
+    height: 0.52rem;
+}
+.phone,.yzm1{
+    margin: 0 0.24rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    border: solid 1px #626365;
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+}
+.phone input,.yzm1 input{
+    width: 75%;
+    height: 0.34rem;
+    line-height: 0.34rem;
+    border: none;
+    outline: none;
+    font-size: 0.12rem;
+}
+.phone i{
+    width: 0.02rem;
+    height: 0.02rem;
+    display: block;
+    float: left;
+    font-size: 0.24rem;
+    margin-left: 0.15rem;
+}
+.phone p{
+    text-align: right;
+    font-size: 0.12rem;
+    margin-top: -0.1rem;
+    color: red;
+}
+.phone b{
+    font-size: 0.12rem;
+}
+.identify{
+    margin: 0 0.24rem;
+    height: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+.identify input{
+   float: left;
+    padding-left: 0.15rem;
+    width: 1.5rem;
+    height: 0.38rem;
+    border: solid 1px #626365;
+    border-radius: 6px;
+    outline: none;
+}
+.yzm1 i{
+    width: 0.2rem;
+    height: 0.2rem;
+    display: block;
+    float: right;
+    font-size: 0.24rem;
+    margin-right: 0.18rem;
+}
+.yzm2{
+    float: right;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    background: #DE4B45;
+    color: #ffffff;
+    width:1rem;
+    border-radius: 6px;
+    font-size: 0.14rem;
+}
+input::-webkit-input-placeholder {
+    color: #bababa;
+    font-size:0.14rem;
+}
+.loginUp{
+    width: 92%;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    border:none;
+    border-radius: 6px;
+    background: #DE4B45;
+    color: #ffffff;
+    outline: none;
+    margin-bottom: 0.3rem;
+}
+.loginDown{
+    width: 92%;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    border:none;
+    border-radius: 6px;
+    background: #DE4B45;
+    color: #ffffff;
+    outline: none;
+    margin-bottom: 0.3rem;
+}
+.regist{
+    float: left;
+    color: #666;
+    text-decoration: underline;
+    display: block;
+    font-size: 0.12rem;
+}
+.free{
+    margin: 0 0.24rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+}
+.getpwd{
+    float: right;
+    color: #666;
+    text-decoration: underline;
+    display: block;
+    font-size: 0.12rem;
+}
+.title{
+    margin: 0 0.24rem;
+    height:0.4rem;
+    margin-top: 0.2rem;
+    position: relative;
+}
+.title li{
+    list-style: none;
+}
+.title li a{
+    margin: 0.3rem;
+    font-size: 0.4rem;
+    text-decoration: none;
+}
+.line{
+    height: 0.2rem;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 0.56rem;
+}
+.partner{
+    width: 1.1rem;
+    height: 0.4rem;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    line-height: 0.4rem;
+    margin: 0 0 0 -0.55rem;
+    text-align: center;
+    color: #878686;
+    font-size: 0.12rem;
+}
+.bg{
+    position: relative;
+}
+.bg img{
+    width: 100%;
+    z-index: -5;
+}
+.userDetail{
+    width: 100%;
+    position: absolute;
+    top: 12%;
+    left: 0;
+}
+.userPhoto{
+    width: 22%;
+    margin: 0 15px 0 5%;
+    float: left;
+}
+.mask{
+    width: 22.2%;
+    height: 110%;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    background-size: 100%;
+    z-index: 2;
+}
+.userPhoto img{
+    width: 90%;
+    margin: 5% 0 0 8%;
+}
+.userName{
+    font-size: .14rem;
+ }
+.info{
+    float: left;
+    margin-top: 6%;
+}
+.userName a{
+    display: inline-block;
+    background: #25282f;
+    color: #f1d08a;
+    font-size: 0.1rem;
+    height: 0.16rem;
+    line-height: 0.16rem;
+    padding: 0 3px;
+    margin-left: 6px;
+    border-radius: 3px;
+}
+.userName b{
+    color: #fa281b;
+    vertical-align: middle;
+}
+.userName i{
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    background-size: 11px 11px;
+}
+.grade{
+    width: 18%;
+    height: 68%;
+    text-align: center;
+    color: #fff;
+    margin-left: 7.5%;
+    float: left;
+    font-size: 0.12rem;
+    background: url("../img/grade.png");
+    background-size: 100%;
+    padding-top: 0.06rem;
+}
+.order{
+    width: 100%;
+    height: 32%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #171516;
+    background: url("../img/transparent.png");
+}
+.orderStatus{
+    width: 70%;
+    height: 100%;
+    float: right;
+    position: relative;
+}
+.orderStatus a{
+    width: 25%;
+    height: 100%;
+    float: left;
+    color: #000;
+    cursor: pointer;
+    display: block;
+}
+.orderStatus strong,.orderStatus span{
+    width: 100%;
+    height: 0.2rem;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    padding-top: 0.05rem;
+    font-size: 0.12rem;
+}
+/*.my{*/
+    /*max-width: 1768px;*/
+    /*margin: 0 auto 0;*/
+/*}*/
+.contentFrame ul{
+    padding-top: 20px;
+}
+.contentFrame ul li{
+    width: 33.3%;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 0 5%;
+    float: left;
+    box-sizing: border-box;
+}
+.tubiao{
+    display: flex;
+    flex-direction: column;
+}
+.tubiao i{
+    height: .88rem;
+    background: rgb(251,236,236);
+    font-size: .5rem;
+    line-height: 0.88rem;
+    color: rgb(222,73,67);
+}
+.tubiao span{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: block;
+    font-size: 0.14rem;
+    padding-top: 6px;
+    color: #626365;
+}
+.excFocus{
+    width: 100%;
+    overflow: hidden;
+}
+.excFocus a{
+    width: 100%;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+}
+.excFocus a img{
+    width: 100%;
+    height: auto;
+}
+.mainBody{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 0.12rem;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.goodsExchangeCon2{
+    margin: -6% 0.12rem 0;
+    padding: 0.02rem 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.goodsExchangeNull{
+    padding: 0.3rem 0;
+    background: #fff;
+    border-radius: 10px;
+}
+.goodsExchangeNull i{
+    width: 0.725rem;
+    height: 0.725rem;
+    display: block;
+    margin: 0 auto;
+    font-size: 0.5rem;
+}
+.goodsExchangeNull p{
+    color: #999999;
+    font-size: 0.14rem;
+    text-align: center;
+    line-height: 0.2rem;
+    margin-top: 0.15rem;
+}
+.excItem{
+    width: 100%;
+    overflow: hidden;
+    background: rgb(253,85,82);
+}
+.excItem h3{
+    width: 100%;
+    color: #252525;
+    font-size: 0.14rem;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    margin: 0.22rem 0 0.18rem;
+}
+.excUserTab{
+    height: 0.36rem;
+    line-height: 0.36rem;
+    margin: 0 0.12rem 0.8%;
+}
+.excUserTab span{
+    float: left;
+    display: inline-block;
+    width: 33.33%;
+    height: 0.36rem;
+    text-align: center;
+    color: #252525;
+    font-size: 0.14rem;
+    background: rgb(255,221,220);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    opacity: 0.8;
+}
+.comList{
+    margin: 0 0.12rem;
+}
+.comList ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.comList ul li{
+    background: #fff;
+    float: left;
+    padding: 0 2% 3%;
+    width: 32.7%;
+    margin-bottom: 0.8%;
+    overflow: hidden;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+.comList li a{
+    display: block;
+}
+.cartBtn{
+    width: 100%;
+    height: 0.2rem;
+    line-height: 0.18rem;
+    text-align: center;
+    font-size: 0.11rem;
+    color: #fc5a5a;
+    border-radius: 0.09rem;
+    border: 0.01rem solid #fc5a5a;
+    margin: 0.07rem auto 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.pic{
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+    font-size: 0;
+    padding-bottom: 100%;
+    position: relative;
+    margin-top: 0.05rem;
+}
+.pic img{
+    width: 100%;
+    height: auto;
+    max-width: 1.6rem;
+    max-height: 1.6rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.name{
+    color: #252525;
+    line-height: 0.18rem;
+    height: 0.18rem;
+    vertical-align: bottom;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: "Microsoft YaHei";
+}
+.proName{
+    color: #666;
+    font-size: 0.1rem;
+    line-height: 0.18rem;
+    height: 0.18rem;
+    vertical-align: bottom;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: "Microsoft YaHei";
+    text-align: left;
+}
+.judge{
+    color: #999;
+    font-size: 0.1rem;
+    line-height: 0.18rem;
+    height: 0.18rem;
+    vertical-align: bottom;
+    white-space: nowrap;
+    font-family: "Microsoft YaHei";
+    text-align: left;
+}
+.judge span{
+    color: #fc5a5a;
+}
+.proPrice{
+    color: #fc5a5a;
+    padding-top: 0.04rem;
+    text-align: left;
+}

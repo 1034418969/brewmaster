@@ -1,9 +1,9 @@
 import React,{Component} from "react"
-export default class Car extends Component{
+export default class ceshi extends Component{
     render(){
         return(
             <div>
-                Car
+                测试页
             </div>
         )
     }

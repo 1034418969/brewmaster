@@ -1,9 +1,9 @@
 import React,{Component} from "react"
-export default class Car extends Component{
+export default class Collect extends Component{
     render(){
         return(
             <div>
-                Car
+                Collect
             </div>
         )
     }
