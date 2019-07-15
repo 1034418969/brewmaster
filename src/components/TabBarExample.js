@@ -1,21 +1,7 @@
 import React from 'react'
 import { TabBar } from 'antd-mobile';
 import "../assets/css/TabBarExample.css";
-import {
-  Route
-} from "react-router-dom";
-import Home from '../views/Home';
-import My from '../views/My';
-import Car from '../views/Car';
-import Clearance from '../views/Clearance';
-import Category from '../views/Category';
-
-
-
-
-
-
-
+import {withRouter} from "react-router-dom"
 
 
 class TabBarExample extends React.Component {
@@ -25,22 +11,14 @@ class TabBarExample extends React.Component {
       selectedTab: "/home",
       hidden: false,
       fullScreen: false,
-      route:{
-        "/home":Home,
-        "/":Home,
-        "/my":My,
-        "/clearance":Clearance,
-        "/category":Category,
-        "/car":Car
-      }
     };
     console.log(this.state.selectedTab)
   }
-  componentWillMount(){
+  componentWillMount() {
     // 组件挂载之前，执行一次判断
     this.onHidden()
   }
-  componentWillReceiveProps(){
+  componentWillReceiveProps() {
     // 点击前进后退按钮时，也要判断是否导航组件
     this.onHidden()
   }
@@ -49,28 +27,29 @@ class TabBarExample extends React.Component {
     this.props.history.push(selectedTab);
     this.onHidden()
   }
-  onHidden(){
+  onHidden() {
     console.log(this)
-    if( this.props.history.location.pathname === "/home" || this.props.history.location.pathname === "/"){
+    if (this.props.history.location.pathname === "/home" || this.props.history.location.pathname === "/") {
       this.setState({
-        hidden:false,
+        hidden: false,
         selectedTab: "/home",
       })
-    }else if(this.props.history.location.pathname !== "/home"){
+    } else if (this.props.history.location.pathname !== "/home") {
       this.setState({
-        hidden:true,
+        hidden: true,
         selectedTab: this.props.history.location.pathname,
       })
     }
   }
   render() {
     return (
-      <div id="tabBown" style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: '100%' }}>
+      <div id="tabBown" >
         <TabBar
           unselectedTintColor="#888883"
           tintColor="rgb(241, 18, 18)"
           barTintColor="white"
           hidden={this.state.hidden}
+          // tabBarPosition='top'
         >
           <TabBar.Item
             title="首页"
@@ -147,18 +126,10 @@ class TabBarExample extends React.Component {
           <TabBar.Item
             icon={<i
               className="iconfont icon-ziyuan"
-              style={{
-                width: '26px',
-                height: '26px',
-                fontSize: "22px"
-              }}
+
             />}
             selectedIcon={<i className="iconfont icon-ziyuan"
-              style={{
-                width: '26px',
-                height: '26px',
-                fontSize: "22px"
-              }}
+
             />}
             title="我的"
             key="my"
@@ -172,7 +143,7 @@ class TabBarExample extends React.Component {
   }
 }
 
-
+export default withRouter(TabBarExample);
 
 
 
@@ -262,7 +233,7 @@ class TabBarExample extends React.Component {
 //     this.onHidden()
 //   }
 //   renderContent(route) {
-    
+
 //     setTimeout(()=>{
 //       console.log(route)
 //     },2000)
@@ -409,4 +380,3 @@ class TabBarExample extends React.Component {
 //   }
 // }
 
-export default TabBarExample

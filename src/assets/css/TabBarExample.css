@@ -1,11 +1,15 @@
-#tabBown{
-    position: fixed;
-     height: 100%;
-      width: 100%;
-      top: 0 
+#tabBown {
+    height: .56rem;
+    width: 100%;
 }
-#tabBown i{
+#tabBown i {
     width: 26px;
     height: 26px;
     font-size: 22px;
+}
+.am-tabs-content-wrap {
+    display: none;
+}
+.am-tab-bar-bar-hidden-bottom{
+    bottom: -1rem;
 }
