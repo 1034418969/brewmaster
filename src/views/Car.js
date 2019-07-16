@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import '../assets/css/Car.css'
 import a from '../assets/img/jx.png';
+// import {
+//     bindActionCreators
+// } from "redux"
 import {
-    connec
+    connect
 } from "react-redux"
 
 
@@ -81,6 +84,13 @@ class Car extends Component {
 function mapStateToProps(state){
     return state;
 }
+function mapDispatchToProps(dispatch){
+    return {
+        shop(){
+            console.log(111)
+        }
+    }
+}
 
 
-export default Car;
+export default connect(mapStateToProps,mapDispatchToProps)(Car);

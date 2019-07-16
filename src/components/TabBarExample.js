@@ -1,7 +1,7 @@
 import React from 'react'
 import { TabBar } from 'antd-mobile';
 import "../assets/css/TabBarExample.css";
-import {withRouter} from "react-router-dom"
+import { withRouter } from "react-router-dom"
 
 
 class TabBarExample extends React.Component {
@@ -41,13 +41,13 @@ class TabBarExample extends React.Component {
   }
   render() {
     return (
-      <div id="tabBown" style={{display:this.state.hidden?"none":"block"}}>
+      <div id="tabBown" style={{ display: this.state.hidden ? "none" : "block" }}>
         <TabBar
           unselectedTintColor="#888883"
           tintColor="rgb(241, 18, 18)"
           barTintColor="white"
           hidden={this.state.hidden}
-          // tabBarPosition='top'
+        // tabBarPosition='top'
         >
           <TabBar.Item
             title="首页"
