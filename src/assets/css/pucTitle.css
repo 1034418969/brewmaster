@@ -1,0 +1,156 @@
+.pubIcon {
+    background: url(../img/catIcon.png) no-repeat 0 0;
+    background-size: 1.5rem 1.5rem;
+}
+
+.pucTitle {
+    height: .45rem;
+    line-height: 0.45rem;
+    position: relative;
+    background: #fff;
+}
+
+.pucTitle .i,
+.jxzy,
+.cartCoupons,
+.falseIcon {
+    position: absolute;
+    display: block;
+}
+
+.pucTitle .i {
+    width: .25rem;
+    height: .25rem;
+    left: 0.1rem;
+    top: 0.1rem;
+    background-position: -0.02rem --1.15rem;
+}
+
+.pucTitle .jxzy {
+    width: 0.15rem;
+    height: 0.15rem;
+    left: 40px;
+    top: 0.15rem;
+}
+
+.pucTitle .jxzy>img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.pucTitle .title {
+    font-size: 14px;
+    color: #252525;
+    margin-left: 0.62rem;
+}
+
+.pucTitle .cartCoupons {
+    top: 0px;
+    right: 0.1rem;
+}
+
+.pucTitle .cartCoupons>b {
+    display: inline-block;
+    width: 0.07rem;
+    height: 0.12rem;
+    margin-left: 0.05prem;
+    position: relative;
+    top: 0.03rem;
+    background-position: -0.71remx 0;
+}
+
+/* 取消全选 */
+.pucTitle .falseIcon {
+    width: 0.25rem;
+    height: 0.25rem;
+    left: 0.1rem;
+    top: 0.1rem;
+    background-position: -0.27rem -1.15rem;
+}
+
+/* 商品 */
+.catShopList {
+    border-top: 1px solid #e8e8e8;
+}
+
+.catShopList>.catShopCont {
+    padding: 0.1rem 0;
+    position: relative;
+    background: #fff;
+}
+
+.catShopList>.catShopCont>span {
+    width: 0.25rem;
+    height: 0.25rem;
+    position: absolute;
+    top: 42%;
+    left: 0.1rem;
+    display: block;
+}
+
+.catShopList>.catShopCont>.falseIcon {
+    background-position: -0.25rem -1.15rem;
+}
+
+.catShopList>.catShopCont>.tureIcon {
+    background-position: 0 -10.15rem;
+}
+
+.catShopList>.catShopCont>.catShopInfo {
+    margin-left: 0.2rem;
+    padding-right: 0.1rem;
+    height: 0.8rem;
+}
+
+.catShopCont>.catShopInfo>.catImg {
+    top: 0.1rem;
+    left: 0.4rem;
+}
+
+.catShopInfo .catImg,
+.catShopInfo .catImgTwe {
+    border: 1px solid #e8e8e8;
+    position: absolute;
+    top: 0.1rem;
+    left: 0.1rem;
+}
+
+.catShopInfo>.catImg {
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+.catShopInfo .catImg img,
+.catShopInfo .catImgTwe img {
+    width: 100%;
+    height: auto;
+}
+
+/* 商品简介 */
+.catInfo {
+    margin-left: 1.12rem;
+}
+
+.catShopInfo .catInfo>h4 {
+    width: 100%;
+    height: 0.36rem;
+    line-height: 0.115rem;
+    font-size: 0;
+    overflow: hidden;
+    color: #333;
+    font-weight: 500;
+}
+
+.catInfo>h4>span {
+    font-size: 14px;
+}
+
+.catInfo>p {
+    font-size: 12px;
+    color: #ff0000;
+    padding: 0 0 0.05rem;
+    height: 18px;
+    line-height: 0.18rem;
+    margin: 0
+}

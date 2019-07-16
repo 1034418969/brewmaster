@@ -9,7 +9,7 @@ export default class route extends Component {
             <div>
                 {
                     RouteList.map((v, i) => {
-                        return (<Route {...v}></Route>)
+                        return (<Route {...v} key={i}></Route>)
                     })
                 }
             </div>

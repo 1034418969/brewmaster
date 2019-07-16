@@ -13,12 +13,9 @@ export default class test extends Component {
                     <div id="main">
                         <Routers></Routers>
                     </div>
-                    <TabBarExample history={this.props.history}></TabBarExample>
+                    <TabBarExample ></TabBarExample>
                 </Router>
             </div>
         )
-    }
-    componentDidMount() {
-        console.log(this, "1111111111")
     }
 }

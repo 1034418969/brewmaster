@@ -12,7 +12,6 @@ class TabBarExample extends React.Component {
       hidden: false,
       fullScreen: false,
     };
-    console.log(this.state.selectedTab)
   }
   componentWillMount() {
     // 组件挂载之前，执行一次判断
@@ -28,7 +27,6 @@ class TabBarExample extends React.Component {
     this.onHidden()
   }
   onHidden() {
-    console.log(this)
     if (this.props.history.location.pathname === "/home" || this.props.history.location.pathname === "/") {
       this.setState({
         hidden: false,
