@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import '../assets/css/Car.css'
 import a from '../assets/img/jx.png';
+import {
+    connec
+} from "react-redux"
 
 
 
-
-export default class Car extends Component {
+class Car extends Component {
     constructor(props) {
         super(props);
         this.state = {
             money:"0.00",
-
+            allqx: ""
         }
     }
     componentWillMount(){
@@ -73,4 +75,12 @@ export default class Car extends Component {
         )
     }
 
+
 }
+
+function mapStateToProps(state){
+    return state;
+}
+
+
+export default Car;
