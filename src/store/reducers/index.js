@@ -1,14 +1,9 @@
-import car from './car';
-import goods from './goods';
-import order from './order';
-import record from './record';
-import { 
+import details from "./details "
+import address from "./address"
+import{
     combineReducers
- } from "redux";
-
- export default combineReducers({
-     car,
-     goods,
-     record,
-     order
- })
+} from "redux"
+export default combineReducers({
+    details,
+    address
+})

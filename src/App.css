@@ -1,13 +1,21 @@
-.App {
+/* .App {
   text-align: center;
-  height: 100%;
-}
-
+} */
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
+ul,li,ol,dl,dt,dd,body,p,h1,h2,h3,h4,h5,h6{
+	margin:0;padding:0;
+}
+html,body{height:100%;
+	font-family: "微软雅黑";
+
+}
+img,iframe{border:none;}
+a{text-decoration: none;color:#333;}
+ul,li,ol{list-style:none;}
 
 .App-header {
   background-color: #282c34;
@@ -23,6 +31,468 @@
 .App-link {
   color: #61dafb;
 }
+.main{
+  width: 100%;
+  height: 40px;
+  background: #de4943;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 20px;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 20px;
+}
+.tu{
+  text-align: center;
+}
+.tu .img{
+  width: 320px;
+  height: 320px;
+  
+}
+.jxzy {
+  width: 38px;
+  height: 13px;
+  vertical-align: top;
+  margin: 2px 5px 0 0;
+  display: inline-block;
+  margin-top:8px;
+  margin-left: 3px;
+}
+
+.span_1{
+  color: #252525;
+  font-weight: 15px;
+  margin-top:4px;
+  display: inline-block;
+
+  
+}
+.jiu{
+  color: #d9a974;
+  background: #333333;
+  font-size: 10px;
+}
+.span_2{
+  font-size: 11px;
+  width: 36px;
+  height: 20px;
+  background: #b79761;
+  border:1px solid #9a948c;
+}
+.detail{
+  width: 100%;
+  height: 178px;
+  /* background: pink; */
+  padding:10px;
+  box-sizing: border-box;
+} 
+.active{
+  width: 100%;
+  height: 100%;
+  /* background: #61dafb; */
+  overflow: hidden;
+}
+.detailsTip {
+  font-size: 13px;
+  color: #fc5a5a;
+  margin-top:10px;
+  line-height: 23px;
+}
+.b_1{
+  margin-top:5px;
+}
+.price {
+   font-weight: 20px;
+  color: #fc5a5a;
+}
+.price_2{
+  color: #d7d7d7;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.final{
+   font-size: 12px;
+    color: #666;
+    margin-top:8px;
+}
+.word{
+  color: #f1d08a;
+  margin-right: 4px;
+  
+}
+.final_1{
+  display: block;
+  float: left;
+  height: 16px;
+  line-height: 16px;
+  padding: 0 4px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  background-color: #ffa855;
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+  margin-top:4px;
+}
+.jintie-wrap{
+  height: 18px;
+  background: #FFD4B5;
+  margin-bottom: 8px;
+  padding: 12px 10px;
+  cursor: pointer;
+  position: relative;
+}
+.jintie-wrap .dt {
+  color: #666;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 57px;
+  height: 40px;
+  background: url(assets/img/jintie.png)
+  no-repeat 0 0;
+  background-size: 57px 37px;
+}
+.voucher-list {
+  height: 18px;
+  position: relative;
+  z-index: 1;
+}
+.jintie {
+  font-size: 14px;
+  height: 18px;
+  line-height: 18px;
+  margin-right: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #FC5A5A;
+  margin-left: 56px;
+}
+.jintie_lq {
+  position: absolute;
+  top: 0px;
+  right: 16px;
+  height: 18px;
+  font-size: 13px;
+  text-decoration: underline;
+}
+.voucher-wrap {
+  height: 18px;
+  background: #fff;
+  margin-bottom: 8px;
+  padding: 12px 10px;
+ 
+}
+.voucher-wrap .dt {
+  float: left;
+  height: 18px;
+  line-height: 18px;
+  color: #666;
+  font-size: 14px;
+}
+.voucher-wrap .dd {
+  margin-left: 54px;
+  height: 18px;
+}
+.voucher-list {
+  height: 18px;
+  position: relative;
+  z-index: 1;
+}
+.voucher-item {
+  float: left;
+  margin-right: 10px;
+  height: 18px;
+}
+.voucher-item i {
+  display: block;
+  width: 4px;
+  height: 18px;
+  font-size: 0;
+}
+.voucher-item i img {
+  width: 100%;
+  height: auto;
+  border: none;
+}
+.voucher-item span {
+  height: 16px;
+  line-height: 16px;
+  padding: 0 3px;
+  text-align: center;
+  border: 1px solid #fc5a5a;
+  font-size: 12px;
+  color: #fc5a5a;
+  background: #fff1f1;
+}
+.discount{
+  width: 100%;
+  height: 55px;
+  background: #f3f5f6;
+  padding: 10px 5px;
+  box-sizing: border-box;
+}
+.discount_1{
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.qwe{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  padding:0 0 0 10px;
+  box-sizing: border-box;
+  justify-content: space-around;
+  position: fixed;
+  bottom:0;
+  background: #fafafa;
+  z-index: 999999;
+}
+.qwe a{
+  
+  padding-right: 10px;
+}
+.line{
+  display: flex;
+  width: 15%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #ccc;
+
+}
+.line_1{
+  display: flex;
+  width: 15%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.size{
+  font-size: 12px;
+}
+.jion{
+  width: 23%;
+  height: 50px;
+  background:#fc5a5a;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 12px;
+}
+.gobuy{
+  width: 22%;
+  height: 50px;
+  background:#3c3f51;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  padding-left: 10px;
+}
+/* .common{
+  width: 100%;
+  height: 43px;
+  background: #2e2e2e;
+  padding:0 10px;
+  box-sizing: border-box;
+  display: flex;
+
+  align-items: center;
+} */
+.xian{
+  color: #fff;
+  padding:5px 6px 7px 6px;
+  background:#d61e02;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.common h3 {
+  font-weight: normal;
+  margin: 0 116px 0 73px;
+  padding-top: 7px;
+  text-align: center;
+}
+.common h3 p {
+  color: #fff;
+  font-size: 12px;
+  height: 14px;
+  line-height: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.down-btn {
+  background: #e62929 none repeat scroll 0 0;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  height: 43px;
+  line-height: 43px;
+  padding: 0 30px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-decoration: none;
+  top: 40px;
+}
+.sorry{
+  color: #9f9f9f;
+}
+.nav{
+  width: 100%;
+  height: 40px;
+  background: #de4943;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 20px;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 20px;
+}
+.navy{
+  width: 100%;
+  height: 311px;
+  /* background: #61dafb; */
+  padding:25px 12px 0 12px;
+  box-sizing: border-box
+}
+.navy_1{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-left: 1px solid #DEDEDE;
+  border-top:1px solid #DEDEDE;
+  border-right: 1px solid #DEDEDE;
+
+}
+.frame {
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  border-bottom: 1px solid #DEDEDE;
+}
+.frame input {
+  width: 56%;
+  padding-left: 2%;
+  height: 35px;
+  line-height: 35px;
+  font-family: Microsoft YaHei;
+  font-size: 14px;
+  color: #6b6c6e;
+  border:none;
+  outline: none;
+}
+.frame span {
+  margin-left: 16px;
+  color: #6b6c6e;
+  font-size: 14px;
+}
+.selectArea {
+  display: inline-block;
+  margin-left: 10px;
+  
+}
+.selectArea select {
+  font-family: Microsoft YaHei;
+  color: #626365;
+  width: 65px;
+  font-size: 12px;
+  background: #ececec;
+ 
+}
+
+input[type=submit], input[type=button], input[type=text], input[type=password] {
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  font-family: Microsoft YaHei;
+}
+
+
+input.btn {
+    border-radius: 5px;
+}
+input[type=submit] {
+    -webkit-appearance: none;
+    box-sizing: content-box;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    font-family: Microsoft YaHei;
+}
+label, button, input[type="button"], input[type="reset"], input[type="submit"], input[type="password"] {
+    cursor: pointer;
+}
+.btn {
+    width: 86%;
+    height: 34px;
+    line-height: 34px;
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+    background: #DE4B45;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @keyframes App-logo-spin {
   from {
@@ -31,8 +501,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-.test{
-  color: #888883;
-  font-weight: bolder;
 }
