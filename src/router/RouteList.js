@@ -3,6 +3,7 @@ import My from '../views/My';
 import Car from '../views/Car';
 import Clearance from '../views/Clearance';
 import Category from '../views/Category';
+import Detail from '../views/Detail'
 
 
 
@@ -35,6 +36,11 @@ export default [
     {
         path:"/category",
         component:Category,
+        exact:true
+    },
+	 {
+        path:"/detail",
+        component:Detail,
         exact:true
     }
 ]
