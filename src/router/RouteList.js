@@ -3,6 +3,10 @@ import My from '../views/My';
 import Car from '../views/Car';
 import Clearance from '../views/Clearance';
 import Category from '../views/Category';
+
+import Grap from './Category/Grap.js'
+import Two from "./Category/Two"
+
 import Login from "../views/My/Login"
 import free from "../views/My/free"
 import order from "../views/My/Order"
@@ -14,8 +18,9 @@ import initwallet from "../views/My/Initwallet"
 import collect from "../views/My/Collect"
 import address from "../views/My/Address"
 import usersafe from "../views/My/Usersafe"
-import Grap from "../router/Category/Grap.js";
+import Graps from "../router/Category/Grap.js";
 import Detail from '../views/Detail';
+
 
 
 
@@ -112,6 +117,16 @@ export default [
     {
         path:"/usersafe",
         component:usersafe,
+        exact:true
+    },
+    {
+        path:"/grap/1",
+        component:Graps,
+        exact:true
+    },
+    {
+        path:"/two",
+        component:Two,
         exact:true
     }
 ]

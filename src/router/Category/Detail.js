@@ -24,7 +24,7 @@ class Detail extends React.Component {
                                         </div>
                                         <div className="one">
                                             <b id="price">&yen;{v.cur_price}.00</b>
-                                            <p id="self"><b>酒</b><span>自营</span></p>
+                                            <p id="self"><b>酒</b><i>自营</i></p>
                                             <p className="comment">{v.goods_id}人评论</p>
                                         </div>
                                     </div>
@@ -35,9 +35,9 @@ class Detail extends React.Component {
             </div>
         )
     }
-    getGoods(page) {
-        console.log(page,"page")
-        axios.get("https://m.jiuxian.com/m_v1/dynamic/mob01ajax/151763?pageNum="+page)
+    getGoods() {
+        // console.log(page,"page")
+        axios.get("https://m.jiuxian.com/m_v1/dynamic/mob01ajax/151763?pageNum=2")
             .then(({data}) => {
                  this.setState({
                     goods: data.goodsCate.list
@@ -51,7 +51,7 @@ class Detail extends React.Component {
     }
     componentDidMount(){
         console.log(this.props);
-        this.getGoods(this.props.id)
+        this.getGoods(this.props.num)
     }
 
 
