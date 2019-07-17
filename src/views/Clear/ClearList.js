@@ -1,5 +1,11 @@
 import React from "react";
-// import SaleAll from /"../../components/common/saleall"
+import {
+    bindActionCreators
+} from "redux"
+import {
+    connect
+} from "react-redux"
+import ClearAction from "../../store/actionCreator/clear"
 class ClearList extends React.Component {
     render() {
         return (
@@ -7,7 +13,7 @@ class ClearList extends React.Component {
                 {
                     this.props.list.map((v, i) => {
                         return (
-                            <li key={i} onClick={this.toDetail.bind(this,v)}>
+                            <li key={i} onClick={this.props.toDetail.bind(this,v)}>
                                 <div className={"goods_top"}>
                                     <img src={v.goods_thumb} alt="" />
                                     <div></div>
@@ -31,13 +37,31 @@ class ClearList extends React.Component {
             </ul>
         )
     }
-    toDetail(v){
-        this.props.history.push({
-            pathname:"/detail",
-            state:{
-                v
-            }
-        })
+    componentDidMount(){
+        console.log(this.props.goods)
+    }
+    // toDetail(v){
+    //     this.props.history.push({
+    //         pathname:"/detail",
+    //         state:{
+    //             v
+    //         }
+    //     })
+    // }
+}
+function mapStateToProps(state) {
+    // console.log(state.goods)
+    return {
+        goods:state.goods
     }
 }
-export default ClearList;
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(ClearAction,dispatch)
+    // {//另一种写法
+    //     getClearList(pageNum = 1) {
+    //         dispatch(ClearAction.getClearList(pageNum))
+    //     }
+    // }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ClearList);

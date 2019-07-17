@@ -29,5 +29,23 @@ export default {
                     })
 
         })
+    },
+    toDetail(v){
+        this.props.history.push({
+            pathname:"/detail"
+        })
+        return (dispatch=>{
+            dispatch({
+                type:"ADD_GOODS",
+                payload:{
+                    id:v.goods_id,
+                    goodsName:v.goods_name,
+                    curPrice:v.cur_price,
+                    shopPrice:v.shop_price,
+                    goodsImg:v.goods_thumb,
+                    goodsTitle:v.goods_name
+                }
+            })
+        })
     }
 }
