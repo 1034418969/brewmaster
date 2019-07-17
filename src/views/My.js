@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-
-export default class My extends Component {
+import {
+    connect
+} from "react-redux"
+class My extends Component {
     render() {
         return (
             <div>
@@ -9,3 +11,15 @@ export default class My extends Component {
         )
     }
 }
+function mapStateToProps(state){
+    return state;
+}
+function mapDispatchToProps(dispatch){
+    return {
+        shop(){
+            console.log(111)
+        }
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(My);

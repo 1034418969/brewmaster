@@ -19,7 +19,7 @@ class Car extends Component {
         }
     }
     componentWillMount(){
-
+        console.log(this)
     }
     render() {
         return (
