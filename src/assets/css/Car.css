@@ -21,7 +21,7 @@
     display: inline-block;
 }
 #catBomAllCheak label .falseIcon {
-    background-position: -25px -115px;
+    background-position: -0.25rem -1.15rem;
 }
 #catBomAllCheak label i {
     width: 25px;
@@ -73,7 +73,9 @@
     color: #999;
     text-align: center;
 }
-
+#catBomAllCheak label .tureIcon {
+    background-position: 0 -115px;
+}
 
 
 
@@ -161,7 +163,17 @@
     height: 0.25rem;
     left: 0.1rem;
     top: 0.1rem;
-    background-position: -0.27rem -1.15rem;
+    background-position: -0.25rem -1.15rem;
+}
+
+.pucTitle .tureIcon {
+    width: 0.25rem;
+    height: 0.25rem;
+    left: 0.1rem;
+    top: 0.1rem;
+    background-position: 0.02rem -1.15rem;
+    position: absolute;
+    display: block;
 }
 
 /* 商品 */
@@ -190,9 +202,9 @@
 .catShopList>.catShopCont>.falseIcon {
     background-position: -0.25rem -1.15rem;
 }
-
+/* 全选 */
 .catShopList>.catShopCont>.tureIcon {
-    background-position: 0 -10.15rem;
+    background-position: 0 -1.15rem;
 }
 
 .catShopList>.catShopCont>.catShopInfo {

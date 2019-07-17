@@ -12,8 +12,8 @@ import {
 import iconfont from "../assets/font/iconfont.css"
 import Connect from "../views/Detail/Connect"
 import Shop from "../views/Detail/Shop"
-import Car from "../views/Detail/Car"
-import JionCar from "../views/Detail/JionCar"
+import Car from "../views/Car"
+import JionCar  from "../views/Detail/JionCar"
 import Buy from "../views/Detail/Buy"
 import Default from '../views/Detail/Default';
 
