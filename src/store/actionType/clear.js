@@ -1,0 +1,4 @@
+export const CLEAR_LIST="CLEAR_LIST";
+export const CLEAR_NUM="CLEAR_NUM";
+export const CLEAR_ISLOADING="CLEAR_ISLOADING";
+export const CHANGE_IS_LOADING="CHANGE_IS_LOADING";

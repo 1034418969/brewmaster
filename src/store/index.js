@@ -1,6 +1,10 @@
+
+
+import rootReducer from "./reducers"
+import thunk from "redux-thunk"
 import {
     createStore,
-    combineReducers//合并,将多个reducer合并为一个
-} from "redux";
-import rootReducer from "./reducers";
-export default createStore(rootReducer);
+    applyMiddleware//应用中间层，用于异步
+}from "redux"
+export default createStore( rootReducer,applyMiddleware(thunk) )
+
