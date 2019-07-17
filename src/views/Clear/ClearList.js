@@ -7,7 +7,7 @@ class ClearList extends React.Component {
                 {
                     this.props.list.map((v, i) => {
                         return (
-                            <li key={i}>
+                            <li key={i} onClick={this.toDetail.bind(this,v)}>
                                 <div className={"goods_top"}>
                                     <img src={v.goods_thumb} alt="" />
                                     <div></div>
@@ -30,6 +30,14 @@ class ClearList extends React.Component {
                 }
             </ul>
         )
+    }
+    toDetail(v){
+        this.props.history.push({
+            pathname:"/detail",
+            state:{
+                v
+            }
+        })
     }
 }
 export default ClearList;

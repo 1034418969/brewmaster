@@ -4,42 +4,48 @@ import Car from '../views/Car';
 import Clearance from '../views/Clearance';
 import Category from '../views/Category';
 import Grap from "../router/Category/Grap.js";
+import Detail from '../views/Detail'
+
 
 
 export default [
     {
-        path:"/",
-        component:Home,
-        exact:true
+        path: "/",
+        component: Home,
+        exact: true
     },
     {
-        path:"/home",
-        component:Home,
-        exact:true
+        path: "/home",
+        component: Home,
+        exact: true
     },
     {
-        path:"/my",
-        component:My,
-        exact:true
+        path: "/my",
+        component: My,
+        exact: true
     },
     {
-        path:"/car",
-        component:Car,
-        exact:true
+        path: "/car",
+        component: Car,
+        exact: true
     },
     {
-        path:"/clearance",
-        component:Clearance,
-        exact:true
+        path: "/clearance",
+        component: Clearance,
+        exact: true
     },
     {
-        path:"/category",
-        component:Category,
-        exact:true
+        path: "/category",
+        component: Category,
+        exact: true
     },
     {
-        path:"/grap/:id",
-        component:Grap,
-        exact:true
+        path: "/grap/:id",
+        component: Grap,
+        exact: true
+    }, {
+        path: "/detail",
+        component: Detail,
+        exact: true
     }
 ]
