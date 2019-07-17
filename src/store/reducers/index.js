@@ -2,6 +2,7 @@ import car from './car';
 import goods from './goods';
 import order from './order';
 import record from './record';
+import clear from './clear'
 import { 
     combineReducers
  } from "redux";
@@ -10,5 +11,6 @@ import {
      car,
      goods,
      record,
-     order
+     order,
+     clear
  })

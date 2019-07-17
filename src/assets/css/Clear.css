@@ -1,0 +1,133 @@
+#main>div{
+    height: 100%;
+    overflow:auto;
+}
+.clear-container{
+    width: 100%;
+    font-size: .14rem;
+    background:#316def; 
+    overflow: auto;
+}
+.top-link{
+    font-size:.18rem;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: .4rem;
+    background: #de4943;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 0 .2rem;
+    box-sizing: border-box;
+}
+.clear-nav img{
+    width:100%;
+}
+.clear-jingbao img{
+    width:100%;
+    margin:.15rem 0 .1rem;
+}
+.clearList{
+    width: 100%;
+}
+ul,li{
+    width: 100%;
+    list-style: none;
+    box-sizing: border-box;
+}
+ul,li,div,dt,dd,dl,ol,p{
+    padding: 0;
+    margin: 0;
+}
+.clearList li{
+    width: 47%;
+    margin:.08rem 0 0 .08rem;
+    height: 2.2rem;
+    box-sizing: border-box;
+    background: #fff;
+    float: left;
+    padding: 0 .08rem;
+    position: relative;
+}
+.clearList li img{
+    width: 80%;
+}
+.clearList li .goods_top p{
+    width: 100%;
+    height: .28rem;
+    line-height:.14rem;
+    font-size: .12rem;
+    overflow: hidden;
+}
+.clearList li .goods_top span{
+    display: inline-block;
+    width: 100%;
+    height: .14rem;
+    line-height:.14rem;
+    overflow: hidden;
+    color: red;
+    font-size: .12rem;
+}
+.goods_Bot{
+    display: flex;
+    justify-content: space-between;
+}
+.goods_Bot span{
+    color: red;
+}
+.goods_Bot span s{
+    color: #666;
+    margin-left: .1rem;
+}
+.goods_Bot .buy{
+    width: .6rem;
+    height: .24rem;
+    background: red;
+    color: #fff;
+    border-radius: 3px;
+    line-height: .24rem;
+}
+.jiazai{
+    width: 100%;
+}
+
+
+.sale-all{
+    position: absolute;
+    top: 0.5rem;
+    left:25%;
+    height:0.6rem;
+    line-height: 0.6rem;
+    font-size: .20rem;
+    width: 50%;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(0,0,0,.3)
+}
+
+
+
+
+
+
+
+/* 底部导航css */
+.footer{
+    width: 100%;
+    height:.48rem;
+    line-height:.24rem;
+    background:#f9f9f9;
+    position: fixed;
+    bottom: 0px;
+}
+.footer div{
+    width:20%;
+    display: flex;
+    flex-direction:column ;
+    float: left;
+    text-align: center;
+    font-style: normal;
+    font-size: .16rem;
+}
