@@ -3,7 +3,7 @@ import My from '../views/My';
 import Car from '../views/Car';
 import Clearance from '../views/Clearance';
 import Category from '../views/Category';
-
+import Grap from "../router/Category/Grap.js";
 
 
 export default [
@@ -35,6 +35,11 @@ export default [
     {
         path:"/category",
         component:Category,
+        exact:true
+    },
+    {
+        path:"/grap/:id",
+        component:Grap,
         exact:true
     }
 ]

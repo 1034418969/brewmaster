@@ -14,12 +14,24 @@ class Car extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            money:"0.00",
-            allqx: ""
+            money: "0.00",
+            allqx: true
         }
     }
-    componentWillMount(){
-        console.log(this)
+    componentWillMount() {
+        this.props.car.list.map((v) => {
+            console.log(v)
+        })
+    }
+    // 全选
+    allChoice(){
+        this.setState({
+            allqx:!this.state.allqx
+        })
+
+    }
+    aloneChoice(e){
+        console.log(e.target.className = "pubIcon falseIcon")
     }
     render() {
         return (
@@ -27,7 +39,8 @@ class Car extends Component {
                 <div id="carList">
                     {/* 酒仙自营 */}
                     <div className="pucTitle">
-                        <span className='pubIcon falseIcon'></span>
+                        {/* 全选 */}
+                        <span className={this.state.allqx?'pubIcon tureIcon':'pubIcon falseIcon'} onClick={this.allChoice.bind(this)}></span>
                         <span className="jxzy"><img src={a} alt="" /></span>
                         <span className='title'>酒仙自营</span>
                         <span className="cartCoupons">领券 <b className="pubIcon "></b></span>
@@ -35,8 +48,9 @@ class Car extends Component {
                     {/* 商品 */}
                     <div className="catShopList">
                         <div className="catShopCont">
-                            <a href="javascript:void(0)" className="cartDel" cart_unit="item-84706">|&nbsp;删除</a>
-                            <span className='pubIcon falseIcon'></span>
+                            <a href="javascript:void(0)" className="cartDel" cart_unit="item-84706" onClick={this.props.delGoods.bind(this, "id")}>|&nbsp;删除</a>
+                            {/* 点选 */}
+                            <span ref='alone' onClick={this.aloneChoice.bind(this)} className={this.state.allqx?'pubIcon tureIcon':'pubIcon falseIcon'}></span>
                             <div className="catShopInfo ">
                                 <div className="catImg ">
                                     <img src="https://img09.jiuxian.com/2019/0228/beb024bdb3b64be29808c5de1686e61c4.jpg" alt="" />
@@ -52,7 +66,7 @@ class Car extends Component {
                                     <div className="rsCartItem">
                                         <div className="comAmount">
                                             <a className="publicIcon minus on">-</a>
-                                            <input className="inpVal" type="text" value={1} />
+                                            <input className="inpVal" type="text" />
                                             <a className="publicIcon plus ">+</a>
                                         </div>
                                     </div>
@@ -60,10 +74,73 @@ class Car extends Component {
                             </div>
                         </div>
                     </div>
+                    <div className="catShopList">
+                        <div className="catShopCont">
+                            <a href="javascript:void(0)" className="cartDel" cart_unit="item-84706" onClick={this.props.delGoods.bind(this, "id")}>|&nbsp;删除</a>
+                            {/* 点选 */}
+                            <span ref='alone' className={this.state.allqx?'pubIcon tureIcon':'pubIcon falseIcon'}></span>
+                            <div className="catShopInfo ">
+                                <div className="catImg ">
+                                    <img src="https://img09.jiuxian.com/2019/0228/beb024bdb3b64be29808c5de1686e61c4.jpg" alt="" />
+                                </div>
+                                <div className="catInfo">
+                                    <h4 className="twoLineEllipsisCart">
+                                        <span>法国茉莉花博若莱干红葡萄酒750ml 【升级版】+嘉年华黑珍珠海马酒刀</span>
+                                    </h4>
+                                    <p>
+                                        <span>¥66.00</span>
+                                        <span><strong >限时抢购</strong></span>
+                                    </p>
+                                    <div className="rsCartItem">
+                                        <div className="comAmount">
+                                            <a className="publicIcon minus on">-</a>
+                                            <input className="inpVal" type="text" />
+                                            <a className="publicIcon plus ">+</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* 遍历购物车 */}
+                    {
+                        this.props.car.list.map((v) => {
+                            return (
+                                <div className="catShopList" key={v.id}>
+                                    <div className="catShopCont">
+                                        <a href="javascript:void(0)" className="cartDel" cart_unit="item-84706" onClick={this.props.delGoods.bind(this, v.id)}>|&nbsp;删除</a>
+                                        {/* 点选 */}
+                                        <span className='pubIcon tureIcon'></span>
+                                        <div className="catShopInfo ">
+                                            <div className="catImg ">
+                                                <img src="https://img09.jiuxian.com/2019/0228/beb024bdb3b64be29808c5de1686e61c4.jpg" alt="" />
+                                            </div>
+                                            <div className="catInfo">
+                                                <h4 className="twoLineEllipsisCart">
+                                                    <span>{v.goodsTitle}</span>
+                                                </h4>
+                                                <p>
+                                                    <span>¥{v.goodsPrice}</span>
+                                                    <span><strong >限时抢购</strong></span>
+                                                </p>
+                                                <div className="rsCartItem">
+                                                    <div className="comAmount">
+                                                        <a className="publicIcon minus on">-</a>
+                                                        <input className="inpVal" type="text" value={v.num} />
+                                                        <a className="publicIcon plus ">+</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
                 <div id="catBomAllCheak">
                     <label data-type="checkallcli">
-                        <i className="pubIcon falseIcon" data-type="checkall"></i>
+                        <i className={this.state.allqx?'pubIcon tureIcon':'pubIcon falseIcon'} data-type="checkall"></i>
                         <span>全选</span>
                     </label>
                     <div>
@@ -81,16 +158,25 @@ class Car extends Component {
 
 }
 
-function mapStateToProps(state){
-    return state;
-}
-function mapDispatchToProps(dispatch){
+function mapStateToProps(state) {
     return {
-        shop(){
-            console.log(111)
+        car: state.car
+    }
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        // 删除购物车商品
+        delGoods(id) {
+            dispatch({
+                type: "DEL_GOODS",
+                payload: {
+                    id
+                }
+            })
         }
+        // 
     }
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(Car);
+export default connect(mapStateToProps, mapDispatchToProps)(Car);
