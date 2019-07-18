@@ -3,6 +3,13 @@ import '../../assets/css/Detail.css';
 import iconfont from "../../assets/font/iconfont.css"
 import jxzy  from "../../assets/img/jxzy.png"
 import axios from "axios"
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink,
+  Switch
+
+} from "react-router-dom"
 
 import {
     connect
@@ -14,12 +21,12 @@ class Tools{
 }
 
 class Default extends React.Component{
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state={
       isShow:true,
       details:{},
-      a:222
+      goods:{}
     }
   }
   cancelButton(){
@@ -52,24 +59,10 @@ class Default extends React.Component{
 		       	</h3>
              <a className="down-btn" >立即打开</a>
             </div>
-            {/* {
-                this.props.details.details.map(v=>{
-                   return( */}
-                       <div key={this.props.location.state.v.goods_id}>
-                        <div className="tu">
-
-                          
-              <img src={this.props.location.state.v.goods_thumb} className="img" />
-
+            <div key={this.state.goods.goodsName}>
+                <div className="tu">
+                <img src={this.state.goods.goodsImg} className="img" />
             </div>
-            {/* <div className='banner'>
-                <div className='swiper-container'>
-                    <div className='swiper-wrapper'>
-                        <div className="swiper-slide"><img style={{width:"200px",height:"50px"}}  src={v.goods_thumb} alt=""/></div>
-                    </div>
-                    <div className="swiper-pagination"></div>
-                </div>
-            </div> */}
              <div className="details ">
              <div className="active">
                <div>
@@ -79,14 +72,14 @@ class Default extends React.Component{
                 </span>
                
                 <img src={jxzy} className="jxzy" />
-                <span className="span_1">{this.props.goods_name}</span>
+                <span className="span_1">{this.props.goods.goods_name}</span>
                 </div>
                 <div className="detailsTip" >固态法白酒酿造的白酒，严格三斤粮食酿造一斤酒，让这款酒具有浓郁的口感。
                 浓香型酒香气幽雅，口感绵柔，醇甜，细腻，后味悠长。
                 </div>
                 <div className="b_1">
-                <span className="price"><b>{Tools.currency(this.props.location.state.v.cur_price/1)}</b></span>
-                <span className="price_2"><s>酒仙价:{Tools.currency(this.props.location.state.v.shop_price/1)}</s></span>
+                <span className="price"><b>{Tools.currency(this.state.goods.curPrice/1)}</b></span>
+                <span className="price_2"><s>酒仙价:{Tools.currency(this.state.goods.shopPrice/1)}</s></span>
                 </div>
                 <div className="final">
                   <span className="iconfont icon-club word"></span>
@@ -125,70 +118,70 @@ class Default extends React.Component{
              <span className="iconfont icon-club word"></span>
              <span>购买CLUB会员享受更多优惠</span>
             </div>
-            
+            <div style={{height:"50px"}}></div>
           </div>
-                       </div>
-                   {/* )
-                }) */}
-            }
-             
-          
-         </div>
+        </div>
+        <div className="qwe">
+              <NavLink to={"/connect"} className="iconfont icon-kefu liney"><span className="size">在线收藏</span></NavLink>
+              <NavLink to={"/shop"}  className="iconfont icon-shoucang2 liney" ><span className="size">收藏</span></NavLink>
+              <NavLink to={"/car"} className="iconfont icon-gouwuche line_1"><span className="size">购物车</span></NavLink>
+              <NavLink to={"/jioncar"} className="jion" onClick={this.props.carList.bind(this)}>加入购物车</NavLink>
+              <NavLink to={"/buy"} className="gobuy" >立即购买</NavLink>
+              </div>
+      </div>
         )
     }
     componentDidMount(){
-      console.log(this.props.location.state.v,9999999)
-      this.setState({
-         a:1111,
-         details:this.props.location.state.v,
-         
-      })
-     
-     console.log( this.state.details,11111111,this.state.a)
-
-
-
-
-
-
-        // console.log(this.props.details.details,"props")
-        // this.props.getDefault()
-        // var mySwiper = new Swiper('.swiper-container',{
-        //   pagination: {
-        //       el: '.swiper-pagination',
-        //       type: 'bullets',
-        //       //type: 'fraction',
-        //       //type : 'progressbar',
-        //       //type : 'custom',
-        //     },
-          
-        //   })
+        // 如果localStorage没有值
+        if(!localStorage.goods){
+             this.setState({
+            goods:this.props.goods
+          },()=>{
+            console.log(this.state.goods,"9090");
+            localStorage.goods=JSON.stringify(this.state.goods);
+          })
+        }else{// 如果localStorage有值
+          // 如果redux有值
+          if(this.props.goods.id){
+            this.setState({
+              goods:this.props.goods
+            },()=>{
+              console.log(this.state.goods,"9090");
+              localStorage.goods=JSON.stringify(this.state.goods);
+            })
+          }else{
+            this.setState({
+              goods:JSON.parse(localStorage.goods)
+            },()=>{
+              console.log(this.state.goods,"9090");
+            })
+          }
+          console.log(this.state.goods,"333")
+        }
+   
     }
-  
+   
 }
 function mapStateToProps(state) {
+  console.log(state,33333)
     return {
-      //  details:state.details
+      goods:state.goods
     }
 }
 function mapDispatchToProps(dispatch){
  return{
-    //  getDefault(){
-    //      //https://m.jiuxian.com/m_v1/dynamic/mob01ajax/151763?pageNum=2
-    //     axios.get("/jiuxian/m_v1/dynamic/mob01ajax/151763?pageNum=2").then(({data})=>{
-    //         console.log(data)
-    //          const details=data.goodsCate.list
-    //          console.log(details)
-    //          dispatch({
-    //              type:"UP_DEFAUIT",
-    //              payload:{
-    //                  details
-    //              }
-    //          })
-    //       })
+  carList(){
+    this.state.push({
+      buyNum:1,
+      goodsId:this.props.goods.id,
+      goodsName:this.props.goods.goods_name,
+      curPrice:this.state.goods.curPrice,
+      shopPrice:this.state.goods.shopPrice,
+      goodsImg: this.state.goods.goodsImg
+    })
 
-    //  }
-   
+}
+    
   }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Default);
