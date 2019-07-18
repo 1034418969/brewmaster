@@ -5,6 +5,7 @@ import {
     Route,
     NavLink
 } from "react-router-dom"
+import axios from "axios";
 export default class phoneLogin extends Component{
     constructor(props){
         super(props);
@@ -14,32 +15,33 @@ export default class phoneLogin extends Component{
         }
     }
     sendLogin(){
-        const userList = JSON.parse(localStorage.userList);
-        console.log(userList)
-        var arr1=[]
-        for (let i=0;i<userList.length;i++){
-            arr1.push({username:userList[i].user,password:userList[i].password})
-        }
-        console.log(arr1[1])
+      
+        // const userList = JSON.parse(localStorage.userList);
+        // console.log(userList)
+        // var arr1=[]
+        // for (let i=0;i<userList.length;i++){
+        //     arr1.push({username:userList[i].user,password:userList[i].password})
+        // }
+        // console.log(arr1[1])
 
-        for(var j=0;j<arr1.length;j++) {
-            if(arr1[j].username===this.state.user.value){
-                if(arr1[j].password===this.state.password.value){
-                    localStorage.user = this.state.user.value;
-                    localStorage.password = this.state.password.value;
-                    this.props.history.push("/my")
-                    return
-                }
-                else {
-                    alert("密码错误")
-                }
-                return
-            }
-            else {
-                alert("用户名错误")
-                return
-            }
-        }
+        // for(var j=0;j<arr1.length;j++) {
+        //     if(arr1[j].username===this.state.user.value){
+        //         if(arr1[j].password===this.state.password.value){
+        //             localStorage.user = this.state.user.value;
+        //             localStorage.password = this.state.password.value;
+        //             this.props.history.push("/my")
+        //             return
+        //         }
+        //         else {
+        //             alert("密码错误")
+        //         }
+        //         return
+        //     }
+        //     else {
+        //         alert("用户名错误")
+        //         return
+        //     }
+        // }
     }
     render() {
         return (

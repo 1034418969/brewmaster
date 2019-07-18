@@ -24,9 +24,9 @@ import Usersafe from "./views/Usersafe"
 import Free from "./views/free"
 class App extends Component{
     render(){
-        if(!localStorage.userList){
-            localStorage.userList=JSON.stringify([{user:"admin",password:"jiuxian"},{user:"1905",password:"1905"},{user:"react",password:"react"}])
-        }
+        // if(!localStorage.userList){
+        //     localStorage.userList=JSON.stringify([{user:"admin",password:"jiuxian"},{user:"1905",password:"1905"},{user:"react",password:"react"}])
+        // }
 
         return (
             <div className="App">

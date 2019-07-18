@@ -1,4 +1,5 @@
 import React,{Component} from "react"
+import axios from "axios";
 export default class Free extends Component{
     render(){
         return(
@@ -11,7 +12,7 @@ export default class Free extends Component{
                 </div>
                 <div style={{marginTop:"0.2rem"}} className="phone">
                     <i className="iconfont icon-shouji"></i>
-                    <input type="text" placeholder="手机号"/>
+                    <input type="text" placeholder="手机号" id="user"/>
                     {/*<p><b className="iconfont icon-gantanhao"></b>请输入手机号</p>*/}
                 </div>
                 <div className="yzm1">
@@ -24,19 +25,29 @@ export default class Free extends Component{
                 </div>
                 <div className="phone">
                     <i className="iconfont icon-mima"></i>
-                    <input type="text" placeholder="密码"/>
+                    <input type="text" placeholder="密码" id="pass"/>
                 </div>
                 <div className="phone">
                     <i className="iconfont icon-mima"></i>
                     <input type="text" placeholder="再次密码"/>
                 </div>
-                <input type="button" onClick={()=>{
-                    console.log(1111)
-                }} value={"立即注册"} className="loginUp" />
+                <input type="button" onClick={this.zhuc} value={"立即注册"} className="loginUp" />
             </div>
         )
     }
     goback(){
-        this.props.history.push("/login")
+       
+        // this.props.history.push("/login")
+        // 
+    }
+    zhuc(){
+        
+        axios.post("http://127.0.0.1/js/user",{
+            username:document.querySelector("#user").value,
+            password:document.querySelector("#pass").value,
+        })
+        .then((data)=>{
+            console.log(data)
+        })
     }
 }

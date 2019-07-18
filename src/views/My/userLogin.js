@@ -5,6 +5,8 @@ import {
     Route,
     NavLink
 } from "react-router-dom"
+import axios from "axios";
+
 export default class userLogin extends Component{
     constructor(props){
         super(props);
@@ -14,31 +16,27 @@ export default class userLogin extends Component{
         }
     }
     sendLogin(){
-        const userList = JSON.parse(localStorage.userList);
-        console.log(userList)
-        var arr1=[]
-        for (let i=0;i<userList.length;i++){
-            arr1.push({username:userList[i].user,password:userList[i].password})
-        }
-        console.log(arr1[1])
-
-        for(var j=0;j<arr1.length;j++) {
-            if(arr1[j].username===this.state.user.value){
-                if(arr1[j].password===this.state.password.value){
+        if(this.state.user.value && this.state.password.value){
+            axios.post("http://127.0.0.1/js/userlog",{
+                username:this.state.user.value,
+                password:this.state.password.value
+            })
+            .then(({data})=>{
+               if(data.ok === 1){
+                //    将账号密码存入localStorage
                     localStorage.user = this.state.user.value;
                     localStorage.password = this.state.password.value;
-                    this.props.history.push("/my")
-                    return
-                }
-                else {
-                    alert("密码错误")
-                }
-                return
+                    this.props.history.push("/my");
+               } 
+               else
+                alert(data.msg)
+               
+            })
+        }else{
+            alert("账号密码不能为空")
         }
-        else {
-                alert("用户名错误")
-            }
-        }
+        
+        
     }
     render() {
         return (
