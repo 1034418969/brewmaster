@@ -1,0 +1,282 @@
+.home{
+    position: relative;
+    width:100%;
+    overflow:hidden;
+}
+
+/*头部*/
+header{
+    height:0.39rem;
+    width:100%;
+    /*background:green;*/
+    opacity: 1;
+    display:flex;
+    padding:0.05rem 0.1rem;
+    overflow: hidden;
+    position: fixed;
+    top:0;
+    z-index:3;
+}
+.head_active{
+    background: rgba(255,0,0,0.5);
+}
+.icon-jiuxianwang{
+    font-size:0.57rem !important;
+    color:#fff;
+    line-height: 0.27rem;
+    margin-right:0.1rem;
+
+
+    /*color:red;*/
+}
+.home-search{
+    border:1px solid #ccc;
+    height:0.27rem;
+    width:2.45rem;
+    padding:0 0.3rem 0 0.1rem;
+    display: flex;
+    line-height:0.27rem;
+    background: #fff;
+    border-radius: 0.03rem;
+}
+.home-search icon-sousuo{
+    font-size:0.12rem;
+}
+.home-search input{
+    border:none;
+    width: 2.89rem;
+}
+/*导航*/
+nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+nav img{
+    width:0.75rem;
+    height:0.78rem;
+}
+nav .main_hall{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*头条*/
+.home_toutiao{
+    display: flex;
+    padding:0.08rem 0.1rem;
+}
+.home_toutiao img{
+    margin-right: 0.2rem;
+}
+.slide a{
+    color:#333;
+    line-height: 0.2rem;
+}
+.slide .swiper-slide{
+    text-align: left;
+}
+
+/*掌上秒拍*/
+.spikeBox{
+
+}
+.spikeTit{
+    display: flex;
+    height: 0.31rem;
+    line-height: 0.31rem;
+    font-size: 12px;
+    color: #666;
+    border-bottom: 1px solid #ccc;
+}
+.spikeTit h3{
+    font-weight: bold;
+    margin:0 0.08rem;
+}
+.lastTime{
+    margin-right: 0.75rem;
+}
+.lastTime span{
+    margin-right: 0.05rem;
+}
+.lastTime i{
+    width: 0.16rem;
+    height:0.16rem;
+    background: #858585;
+    text-align: center;
+    color:#fff;
+    border-radius: 0.02rem;
+}
+#__home_mp-more{
+    color:#666;
+}
+
+/*spikeWrap*/
+.spikeWrap{
+    padding:0.05rem 0 0.05rem 0.1rem;
+    overflow: hidden;
+    width:3.75rem;
+}
+.swiper-container2 .swiper-slide{
+    width:1rem;
+    height:1.61rem;
+    /*border: 1px solid #0b93d5;*/
+}
+.spikegoods{
+    font-size:0.16rem;
+}
+.spikegoods .goodname{
+    font-size: 12px;
+    color:#252525;
+    display: block;
+    width: 0.96rem;
+    height:0.32rem;
+    line-height:0.16rem;
+    overflow: hidden;
+    text-align: left;
+}
+.spikegoods .googprice{
+    color:#fc5a5a;
+    display: block;
+    height: 0.14rem;
+    font-size: 0.14rem;
+    line-height: 0.14rem;
+    margin-top: 0.05rem;
+    text-align: left;
+}
+.spikegoods .googdelprice{
+    color:#999;
+    display: block;
+    font-size: 0.12rem;
+    line-height: 0.14rem;
+    text-align: left;
+    text-decoration: line-through;
+}
+
+
+/*三张图片（全屏）*/
+.threepic{
+    width: 100%;
+}
+
+/*精选套餐choice*/
+.choice{
+    width: 100%;
+    display: flex;
+    padding:0.1rem 0 ;
+}
+.choice img{
+    width:1.9088rem;
+}
+
+/*今日推荐recommend，又是一个轮播*/
+.recommend{
+    width: 100%;
+    height:1.0561rem;
+    overflow: hidden;
+}
+
+.swiper-container3 .swiper-slide{
+    width: 1.5rem;
+}
+.swiper-container3 .recommendpic{
+    width: 1.5rem;
+}
+
+/*四张图片啊fourpic*/
+
+
+/*精选*/
+.home_jingxuan{
+    width:100%;
+}
+.jingxuan1{
+    display: flex;
+    height: 1rem;
+}
+.jingxuan1_1{
+    width: 50%;
+}
+.jingxuan2{
+    display: flex;
+    height: 1.5rem;
+}
+.jingxuan1_2{
+    width: 50%;
+}
+.jingxuan2_1,.jingxuan2_2,.jingxuan2_3{
+    width: 33.333333333%;
+}
+
+/*中国白酒馆*/
+.baijiuguan{
+    width: 100%;
+    overflow: hidden;
+    height: 3rem;
+}
+.baijiuguan_con{
+    display: flex;
+}
+.con_lft{
+    width:1.4625rem;
+    height: 2rem;
+}
+.con_right{
+    width:2.2875rem;
+    display: flex;
+    flex-wrap: wrap;
+    height: 2rem;
+}
+.con_right1{
+    width: 100%;
+    height: 1rem;
+}
+.con_right2{
+    display: flex;
+    height: 1rem;
+}
+.con_right2_1,.con_right2_2{
+    width: 50%;
+}
+.slide4{
+    margin-top: 0.10rem;
+}
+.baijiuguan_pic{
+    width: 0.4363rem;
+}
+.swiper-container4 .swiper-slide{
+    width:0.4363rem;
+    margin-right: 0.3rem;
+}
+/*红酒馆啥的三个都是复制的白酒管，只要改img的地址就行*/
+
+
+/*主题街*/
+.topic{
+    width: 100%;
+}
+.topic_con{
+    width: 100%;
+}
+.topic_pic{
+    width: 1.8748rem;
+    margin: 0;
+    /*flex:0.5;*/
+}
+
+
+/*返回顶部*/
+
+.gotop{
+    position: fixed;
+    top:5rem;
+    right:0.15rem;
+    width: 0.51rem;
+    height: 0.51rem;
+    z-index: 10;
+}
+.gotop .iconfont{
+    color:#656565;
+    font-size:0.51rem;
+    background: #fff;
+    border-radius: 50%;
+}

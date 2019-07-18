@@ -1,0 +1,84 @@
+.hot{
+    width: 100%;
+}
+.no{
+    height: 0.08rem;
+    background: #ccc;
+}
+.hot_tit{
+    display: block;
+    width: 100%;
+    font-size: 0.12rem!important;
+    color:#666;
+    height: 0.33rem;
+    line-height: 0.33rem;
+    text-align: center;
+}
+.hot_shoplist{
+    display: flex;
+    flex-wrap: wrap;
+}
+.hot_shop{
+    width: 1.8563rem;
+    height:2.4363rem;
+    border: 1px solid #ccc;
+    margin: 0 0.01rem 0.01rem 0;
+    padding: 0.2rem 0.1rem 0.05rem;
+    position: relative;
+}
+.hot_shop:nth-child(n){
+    border-left: none;
+}
+.hot_shop:nth-child(2n){
+    border-right: none;
+}
+.hot_shop img{
+    width: 1.6563rem;
+}
+.hot_shop span{
+    display: block;
+    text-align: left;
+}
+.hot_icon{
+    position: absolute;
+    width: 1.5rem;
+    /*background: red;*/
+    top:0.03rem;
+    left:0.03rem;
+    font-size:12px;
+    display: flex;
+    color:#fff;
+}
+.icons{
+    margin-right: 0.03rem;
+    border-radius: 0.03rem;
+}
+.hot_name{
+    display: block;
+    width: 1.6563rem;
+    height:0.33rem;
+    overflow: hidden;
+    font-size:12px;
+    color:#656565;
+}
+.goodnm{
+    font-size: 0.15rem;
+    color:#252525;
+    text-align: left;
+}
+#pri{
+    /*background: green;*/
+    height: 0.21rem;
+    display: flex;
+    line-height: 0.21rem;
+}
+#pri .hot_price{
+    font-size: 14px;
+    color: #fc5a5a;
+    margin-right: 0.02rem;
+}
+#pri .delprice{
+    text-decoration: line-through;
+    font-size: 12px;
+    color: #656565;
+}

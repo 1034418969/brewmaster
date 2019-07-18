@@ -22,6 +22,12 @@ import Graps from "../router/Category/Grap.js";
 import Detail from '../views/Detail';
 
 
+//首页的
+import Gooddetail from "../components/common/gooddetail.js";
+import Search from "../components/common/search.js";
+import SecondBuy from "../views/Home/SecondBuy.js"
+
+
 
 
 export default [
@@ -127,6 +133,22 @@ export default [
     {
         path:"/two",
         component:Two,
+        exact:true
+    },
+    //首页的
+    {
+        path:"/search",
+        component:Search,
+        exact:true
+    },
+    {
+        path:"/gooddetail",
+        component:Gooddetail,
+        exact:true
+    },
+    {
+        path:"/secondbuy",
+        component:SecondBuy,
         exact:true
     }
 ]
