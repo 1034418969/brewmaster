@@ -97,6 +97,11 @@ class Car extends Component {
             
         }
     }
+    // 跳转商品详情
+    jmpDetail(goods){
+        this.props.history.push("/detail")
+        console.log(this,goods)
+    }
     render() {
         return (
             <div id="car">
@@ -116,11 +121,11 @@ class Car extends Component {
                             {/* 单选 */}
                             <span ref='alone' onClick={this.aloneChoice.bind(this, this.state.allgoods[0].id)} className={this.state.allgoods[0].choice ? 'pubIcon tureIcon' : 'pubIcon falseIcon'}></span>
                             <div className="catShopInfo ">
-                                <div className="catImg ">
+                                <div className="catImg " onClick={this.jmpDetail.bind(this,this.props.car.list)}>
                                     <img src="https://img09.jiuxian.com/2019/0228/beb024bdb3b64be29808c5de1686e61c4.jpg" alt="" />
                                 </div>
                                 <div className="catInfo">
-                                    <h4 className="twoLineEllipsisCart">
+                                    <h4 className="twoLineEllipsisCart"  onClick={this.jmpDetail.bind(this,this.props.car.list)}>
                                         <span>法国茉莉花博若莱干红葡萄酒750ml 【升级版】+嘉年华黑珍珠海马酒刀</span>
                                     </h4>
                                     <p>
