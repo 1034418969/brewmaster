@@ -18,6 +18,7 @@ class Car extends Component {
             sumNum: 0,
             allqx: false,
             aloneqx: false,
+            // 商品
             allgoods: [
                 {
                     id: 1,
@@ -39,13 +40,13 @@ class Car extends Component {
         this.setState({
             allqx: !this.state.allqx,
         }, () => {
+            // 遍历单选
             for (var i = 0; i < this.state.allgoods.length; i++) {
                 this.state.allgoods[i].choice = this.state.allqx;
                 this.setState({
                     allgoods: this.state.allgoods
                 })
             }
-        },()=>{
             this.sumNum();
         })
     }
@@ -59,6 +60,7 @@ class Car extends Component {
                 })
             }
         }
+        // 判断全选
         let bStop = true;
         for (var i = 0; i < this.state.allgoods.length; i++) {
             if (this.state.allgoods[i].choice === false) {
@@ -89,6 +91,12 @@ class Car extends Component {
 
     }
     // 改变数量
+    changeNum(type){
+        // 1--增加，2--减少
+        for(var i = 0; i < this.state.allgoods.length; i++){
+            
+        }
+    }
     render() {
         return (
             <div id="car">

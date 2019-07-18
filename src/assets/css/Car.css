@@ -113,7 +113,7 @@
 .pucTitle .jxzy {
     width: 0.15rem;
     height: 0.15rem;
-    left: 40px;
+    left: 0.4rem;
     top: 0.15rem;
 }
 
@@ -329,7 +329,7 @@
 }
 
 .comAmount .inpVal {
-    width: 75px;
+    width: .75rem;
     display: inline-block;
     height: 0.2rem;
     line-height: 0.2rem;
