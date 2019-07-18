@@ -143,6 +143,7 @@
   },
   "devDependencies": {
     "customize-cra": "^0.2.14",
+    "http-proxy-middleware": "^0.19.1",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "react-app-rewired": "^2.1.3"

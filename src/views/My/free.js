@@ -42,7 +42,7 @@ export default class Free extends Component{
     }
     zhuc(){
         
-        axios.post("http://127.0.0.1/js/user",{
+        axios.post("/jx/user",{
             username:document.querySelector("#user").value,
             password:document.querySelector("#pass").value,
         })

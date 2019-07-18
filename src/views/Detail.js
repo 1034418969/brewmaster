@@ -32,7 +32,6 @@ class Detail extends React.Component {
               <Route path={"/car"} component={Car}></Route>
               <Route path={"/jioncar"} component={JionCar}></Route>
               <Route path={"/buy"} component={Buy}></Route>
-
               <NavLink exact to={"/detail"}></NavLink>
               {/* <div className="qwe">
               <NavLink to={"/connect"} className="iconfont icon-kefu liney"><span className="size">在线收藏</span></NavLink>

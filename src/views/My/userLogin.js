@@ -17,7 +17,7 @@ export default class userLogin extends Component{
     }
     sendLogin(){
         if(this.state.user.value && this.state.password.value){
-            axios.post("http://127.0.0.1/js/userlog",{
+            axios.post("/jx/userlog",{
                 username:this.state.user.value,
                 password:this.state.password.value
             })

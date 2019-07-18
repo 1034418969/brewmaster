@@ -9,11 +9,14 @@ import {
   NavLink,
   Switch
 
-} from "react-router-dom"
-
+} from "react-router-dom";
+import {
+  bindActionCreators
+} from "redux"
 import {
     connect
-} from "react-redux"
+} from "react-redux";
+import goods from "../../store/actionCreator/goods"
 class Tools{
   static currency(v,n=2){
     return "￥"+v.toFixed(n);
@@ -124,20 +127,21 @@ class Default extends React.Component{
         <div className="qwe">
               <NavLink to={"/connect"} className="iconfont icon-kefu liney"><span className="size">在线收藏</span></NavLink>
               <NavLink to={"/shop"}  className="iconfont icon-shoucang2 liney" ><span className="size">收藏</span></NavLink>
-              <NavLink to={"/car"} className="iconfont icon-gouwuche line_1"><span className="size">购物车</span></NavLink>
-              <NavLink to={"/jioncar"} className="jion" onClick={this.props.carList.bind(this)}>加入购物车</NavLink>
+              <NavLink to={"/car"} className="iconfont icon-gouwuche line_1"><span className="size" >购物车</span></NavLink>
+              <div to={"/jioncar"} className="jion"  onClick={this.props.addCarList.bind(this)}>加入购物车</div>
               <NavLink to={"/buy"} className="gobuy" >立即购买</NavLink>
               </div>
       </div>
         )
     }
+    
     componentDidMount(){
+      // 执行页面刷新Redux数据保存
         // 如果localStorage没有值
         if(!localStorage.goods){
              this.setState({
             goods:this.props.goods
           },()=>{
-            console.log(this.state.goods,"9090");
             localStorage.goods=JSON.stringify(this.state.goods);
           })
         }else{// 如果localStorage有值
@@ -146,42 +150,24 @@ class Default extends React.Component{
             this.setState({
               goods:this.props.goods
             },()=>{
-              console.log(this.state.goods,"9090");
               localStorage.goods=JSON.stringify(this.state.goods);
             })
           }else{
             this.setState({
               goods:JSON.parse(localStorage.goods)
-            },()=>{
-              console.log(this.state.goods,"9090");
             })
           }
-          console.log(this.state.goods,"333")
         }
    
     }
    
 }
 function mapStateToProps(state) {
-  console.log(state,33333)
     return {
       goods:state.goods
     }
 }
 function mapDispatchToProps(dispatch){
- return{
-  carList(){
-    this.state.push({
-      buyNum:1,
-      goodsId:this.props.goods.id,
-      goodsName:this.props.goods.goods_name,
-      curPrice:this.state.goods.curPrice,
-      shopPrice:this.state.goods.shopPrice,
-      goodsImg: this.state.goods.goodsImg
-    })
-
-}
-    
-  }
+ return bindActionCreators(goods,dispatch)
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Default);
