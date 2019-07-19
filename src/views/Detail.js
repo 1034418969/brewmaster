@@ -19,7 +19,6 @@ import Default from '../views/Detail/Default';
 
 class Detail extends React.Component {
   render() {
-    console.log(this.props)
     return (
       <div className="App">
         {
@@ -47,11 +46,10 @@ class Detail extends React.Component {
     )
   }
   componentDidMount(){
-    console.log(this.props.goods)
+    console.log(this.props)
   }
 }
 function mapStateToProps(state) {
-  console.log(state,11111111)
   return {
       list: state.clear.list,
       pageNum: state.clear.pageNum,

@@ -138,6 +138,7 @@ class Default extends React.Component{
     componentDidMount(){
       // 执行页面刷新Redux数据保存
         // 如果localStorage没有值
+        console.log(this.props.goods,46464648)
         if(!localStorage.goods){
              this.setState({
             goods:this.props.goods

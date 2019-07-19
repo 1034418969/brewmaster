@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import '../assets/css/Car.css'
 import a from '../assets/img/jx.png';
-// import {
-//     bindActionCreators
-// } from "redux"
+import {
+    bindActionCreators
+} from "redux"
 import {
     connect
 } from "react-redux"
-
-
+import axios from 'axios'
+import CarDetail from "../store/actionCreator/car"
 
 class Car extends Component {
     constructor(props) {
@@ -17,22 +17,8 @@ class Car extends Component {
             allMoney: "0.00",
             sumNum: 0,
             allqx: false,
-            aloneqx: false,
             // 商品
-            allgoods: [
-                {
-                    id: 1,
-                    num: 1,
-                    money: 20,
-                    choice: false
-                },
-                {
-                    id: 2,
-                    num: 3,
-                    money: 40,
-                    choice: false
-                }
-            ]
+            allgoods: []
         }
     }
     // 全选
@@ -40,27 +26,18 @@ class Car extends Component {
         this.setState({
             allqx: !this.state.allqx,
         }, () => {
-            // 遍历单选
-            for (var i = 0; i < this.state.allgoods.length; i++) {
-                this.state.allgoods[i].choice = this.state.allqx;
-                this.setState({
-                    allgoods: this.state.allgoods
-                })
-            }
-            this.sumNum();
+            axios.put("/jx/allChangecar", {
+                user: localStorage.user,
+                choice: this.state.allqx
+            }).then(({ data }) => {
+                if (data.ok === 1) {
+                    this.getCar()
+                }
+            })
         })
     }
-    // 单选
-    aloneChoice(id) {
-        for (var i = 0; i < this.state.allgoods.length; i++) {
-            if (this.state.allgoods[i].id === id) {
-                this.state.allgoods[i].choice = !this.state.allgoods[i].choice;
-                this.setState({
-                    allgoods: this.state.allgoods
-                })
-            }
-        }
-        // 判断全选
+    // 监控单选--->全选
+    oneAll() {
         let bStop = true;
         for (var i = 0; i < this.state.allgoods.length; i++) {
             if (this.state.allgoods[i].choice === false) {
@@ -70,37 +47,83 @@ class Car extends Component {
         }
         this.setState({
             allqx: bStop,
-        },()=>{
-            this.sumNum();
+        }, () => {
+            // this.sumNum()
+            // this.getCar();
         })
     }
+    // 单选
+    aloneChoice(id, type) {
+        axios.put("/jx/changecar", {
+            id,
+            type
+        }).then(({ data }) => {
+            this.getCar()
+        })
+
+    }
+    // 获取购物车
+    getCar() {
+        axios.get('/jx/Car', {
+            params: {
+                username: localStorage.user
+            }
+        })
+            .then(({ data }) => {
+                console.log(data)
+                this.setState({
+                    allgoods: data.contextList
+                }, () => {
+                    this.sumNum();
+                    this.oneAll();
+                })
+            })
+    }
+    componentWillMount() {
+        // 获取购物车
+        this.getCar()
+    }
     // 总价格，数量
-    sumNum(){
+    sumNum() {
         var sumNum = 0;
         var allMoney = 0;
-        for(var i = 0; i < this.state.allgoods.length; i++){
-            if(this.state.allgoods[i].choice === true){
-                sumNum +=this.state.allgoods[i].num;
-                allMoney +=this.state.allgoods[i].money;
+        for (var i = 0; i < this.state.allgoods.length; i++) {
+            if (this.state.allgoods[i].choice === true) {
+                sumNum += this.state.allgoods[i].num / 1;
+                allMoney += (this.state.allgoods[i].curPrice * this.state.allgoods[i].num) / 1;
             }
         }
+        allMoney += ".00";
         this.setState({
             sumNum,
             allMoney
         })
-
     }
     // 改变数量
-    changeNum(type){
-        // 1--增加，2--减少
-        for(var i = 0; i < this.state.allgoods.length; i++){
-            
-        }
+    changeNum(id,type) {
+        axios.put("/jx/changeNum",{
+            id,
+            type
+        }).then(({data})=>{
+            this.getCar()
+        })
     }
     // 跳转商品详情
-    jmpDetail(goods){
+    jmpDetail(goods) {
+        console.log(this)
+        this.props.carDetail.bind(this,goods)()
         this.props.history.push("/detail")
-        console.log(this,goods)
+    }
+    // 删除购物车商品
+    delGoods(id){
+        axios.delete("/jx/Car",{
+            data:{
+                id
+            }
+        })
+        .then(({data})=>{
+            this.getCar();
+        })
     }
     render() {
         return (
@@ -115,88 +138,34 @@ class Car extends Component {
                         <span className="cartCoupons">领券 <b className="pubIcon "></b></span>
                     </div>
                     {/* 商品 */}
-                    <div className="catShopList">
-                        <div className="catShopCont">
-                            <a href="javascript:void(0)" className="cartDel" cart_unit="item-84706" onClick={this.props.delGoods.bind(this, "id")}>|&nbsp;删除</a>
-                            {/* 单选 */}
-                            <span ref='alone' onClick={this.aloneChoice.bind(this, this.state.allgoods[0].id)} className={this.state.allgoods[0].choice ? 'pubIcon tureIcon' : 'pubIcon falseIcon'}></span>
-                            <div className="catShopInfo ">
-                                <div className="catImg " onClick={this.jmpDetail.bind(this,this.props.car.list)}>
-                                    <img src="https://img09.jiuxian.com/2019/0228/beb024bdb3b64be29808c5de1686e61c4.jpg" alt="" />
-                                </div>
-                                <div className="catInfo">
-                                    <h4 className="twoLineEllipsisCart"  onClick={this.jmpDetail.bind(this,this.props.car.list)}>
-                                        <span>法国茉莉花博若莱干红葡萄酒750ml 【升级版】+嘉年华黑珍珠海马酒刀</span>
-                                    </h4>
-                                    <p>
-                                        <span>¥66.00</span>
-                                        <span><strong >限时抢购</strong></span>
-                                    </p>
-                                    <div className="rsCartItem">
-                                        <div className="comAmount">
-                                            <a className="publicIcon minus on">-</a>
-                                            <input className="inpVal" type="text" value={1} />
-                                            <a className="publicIcon plus ">+</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="catShopList">
-                        <div className="catShopCont">
-                            <a href="javascript:void(0)" className="cartDel" cart_unit="item-84706" onClick={this.props.delGoods.bind(this, "id")}>|&nbsp;删除</a>
-                            {/* 单选 */}
-                            <span ref='alone' onClick={this.aloneChoice.bind(this, this.state.allgoods[1].id)} className={this.state.allgoods[1].choice ? 'pubIcon tureIcon' : 'pubIcon falseIcon'}></span>
-                            <div className="catShopInfo ">
-                                <div className="catImg ">
-                                    <img src="https://img09.jiuxian.com/2019/0228/beb024bdb3b64be29808c5de1686e61c4.jpg" alt="" />
-                                </div>
-                                <div className="catInfo">
-                                    <h4 className="twoLineEllipsisCart">
-                                        <span>法国茉莉花博若莱干红葡萄酒750ml 【升级版】+嘉年华黑珍珠海马酒刀</span>
-                                    </h4>
-                                    <p>
-                                        <span>¥66.00</span>
-                                        <span><strong >限时抢购</strong></span>
-                                    </p>
-                                    <div className="rsCartItem">
-                                        <div className="comAmount">
-                                            <a className="publicIcon minus on">-</a>
-                                            <input className="inpVal" type="text" value={1} />
-                                            <a className="publicIcon plus ">+</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     {/* 遍历购物车 */}
                     {
-                        this.props.car.list.map((v) => {
+                        this.state.allgoods.map((v) => {
                             return (
-                                <div className="catShopList" key={v.id}>
+                                <div className="catShopList" key={v._id}>
                                     <div className="catShopCont">
-                                        <a href="javascript:void(0)" className="cartDel" cart_unit="item-84706" onClick={this.props.delGoods.bind(this, v.id)}>|&nbsp;删除</a>
+                                        <a href="javascript:void(0)" className="cartDel" cart_unit="item-84706" onClick={this.delGoods.bind(this, v._id)}>|&nbsp;删除</a>
                                         {/* 单选 */}
-                                        <span className='pubIcon tureIcon' onClick={this.aloneChoice.bind(this)} className={this.state.aloneqx ? 'pubIcon tureIcon' : 'pubIcon falseIcon'}></span>
+                                        <span className='pubIcon tureIcon' onClick={this.aloneChoice.bind(this, v._id, !v.choice)} className={v.choice ? 'pubIcon tureIcon' : ' pubIcon falseIcon'}></span>
                                         <div className="catShopInfo ">
                                             <div className="catImg ">
-                                                <img src="https://img09.jiuxian.com/2019/0228/beb024bdb3b64be29808c5de1686e61c4.jpg" alt="" />
+                                                <img src={v.goodsImg} alt="" onClick={this.jmpDetail.bind(this,v)}/>
+                                                {v.choice}
                                             </div>
                                             <div className="catInfo">
                                                 <h4 className="twoLineEllipsisCart">
-                                                    <span>{v.goodsTitle}</span>
+                                                    <span  onClick={this.jmpDetail.bind(this,v)}>{v.goodsTitle}</span>
                                                 </h4>
                                                 <p>
-                                                    <span>¥{v.goodsPrice}</span>
+                                                    <span>¥{v.curPrice * v.num}</span>
                                                     <span><strong >限时抢购</strong></span>
                                                 </p>
                                                 <div className="rsCartItem">
                                                     <div className="comAmount">
-                                                        <a className="publicIcon minus on">-</a>
+                                                        <a className="publicIcon minus on" onClick={this.changeNum.bind(this,v._id,-1)}>-</a>
                                                         <input className="inpVal" type="text" value={v.num} />
-                                                        <a className="publicIcon plus ">+</a>
+                                                        <a className="publicIcon plus " onClick={this.changeNum.bind(this,v._id,1)}>+</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -229,22 +198,13 @@ class Car extends Component {
 
 function mapStateToProps(state) {
     return {
-        car: state.car
+        car: state.car,
+        goods:state.goods
     }
 }
 function mapDispatchToProps(dispatch) {
-    return {
-        // 删除购物车商品
-        delGoods(id) {
-            dispatch({
-                type: "DEL_GOODS",
-                payload: {
-                    id
-                }
-            })
-        }
-        // 
-    }
+    // 列表跳转详情ClearAction
+    return bindActionCreators(CarDetail,dispatch)
 }
 
 

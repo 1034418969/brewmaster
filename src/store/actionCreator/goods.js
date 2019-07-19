@@ -1,19 +1,14 @@
-import React, { Component } from 'react'
 import axios from 'axios';
-import goods from '../state/goods';
 export default {
     addCarList(e, num) {
-        // console.log(11,e,num)
         const goods = this.state.goods;
         const username = localStorage.user;
         e.persist(
-            console.log(username, goods, num),
-            axios.get("/jx/addCar", {
-                    params: {
+            axios.post("/jx/addCar", {
                         username,
-                        goods,
-                        num
-                    }
+                        ...goods,
+                        num,
+                        choice:false
                 }
             )
             .then(({ data }) => {

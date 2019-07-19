@@ -1,6 +1,7 @@
 import axios from "axios";
 import common from "./common"
 import {CLEAR_LIST,CLEAR_NUM} from "../actionType/clear"
+import goods from "../state/goods";
 export default {
     getClearList(pageNum,isLoading) {
         return (dispatch => {
@@ -34,6 +35,7 @@ export default {
         this.props.history.push({
             pathname:"/detail"
         })
+        console.log(99797,v)
         return (dispatch=>{
             dispatch({
                 type:"ADD_GOODS",
