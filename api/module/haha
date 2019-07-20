@@ -1,0 +1,28 @@
+app.post("/addCar", function (req, res) {
+    const goods = req.body;
+    const username = goods.username;
+    db.findOne("CarList", {
+        username,
+        id: goods.id
+    }, function (err, results) {
+        if (!results) {
+            goods.num = goods.num || 1;
+            db.insertOne("CarList", {
+                ...goods
+            }, function (err, results) {
+                res.json({
+                    ok: 1,
+                    msg: "成功"
+                })
+            })
+        } else {
+            db.updateOneById("CarList", results._id, {
+                $inc: { num: 1 }
+            }, function (err, up) {
+                res.json({
+                    ok: 2
+                })
+            })
+        }
+    })
+})
