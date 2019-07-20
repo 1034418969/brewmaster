@@ -28,7 +28,7 @@ class My extends Component{
         //     if(!localStorage.user){
         //         this.props.history.push("/Login");
         //     }
-        this.forceUpdate();
+        // this.forceUpdate();
         if(!localStorage.user)
             this.props.history.push("/login")
     }
@@ -36,11 +36,15 @@ class My extends Component{
         return (
             <div>
                 <div style={{height: "0.4rem", background: "#de4943", color:" #fff",
-                    display:"flex",justifyContent:"space-between",paddingLeft:"0.05rem",paddingRight:"0.05rem"}}>
-                    <i onClick={this.goback.bind(this)} style={{marginTop:"0.1rem"}} className="iconfont icon-fanhui"></i>
+                    display:"flex",justifyContent:"space-between",paddingLeft:"0.05rem",paddingRight:"0.05rem",
+                    position: "fixed",zIndex: "999999", width: "98%"}}>
+                    <i onClick={()=>{
+                        this.props.history.push("/")
+                    }} style={{marginTop:"0.1rem"}} className="iconfont icon-fanhui"></i>
                     <span style={{marginTop:"0.1rem",fontSize:".14rem"}}>个人中心</span>
                     <i style={{marginTop:"0.1rem"}} className="iconfont icon-gengduo"></i>
                 </div>
+                <div style={{height: "0.4rem"}}></div>
                 <div className="my">
                     <div className="bg">
                         <img src="https://misc.jiuxian.com/m_user/images/usercenter/topBg.jpg"/>
@@ -104,7 +108,7 @@ class My extends Component{
                                 <NavLink to={"/initwallet"} className="tubiao"><i className="iconfont icon-qianbao"></i><span>我的钱包</span></NavLink>
                             </li>
                             <li>
-                                <NavLink to={"/collect"} className="tubiao"><i className="iconfont icon-shoucang11-copy"></i><span>我的收藏</span></NavLink>
+                                <NavLink to={"/car"} className="tubiao"><i className="iconfont icon-shoucang11-copy"></i><span>我的收藏</span></NavLink>
                             </li>
                             <li>
                                 <NavLink to={"/address"} className="tubiao"><i className="iconfont icon-weizhi"></i><span>地址管理</span></NavLink>

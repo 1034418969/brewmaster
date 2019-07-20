@@ -1,35 +1,87 @@
-// import React,{Component} from "react"
-// import Swiper from 'swiper/dist/js/swiper.js'
-// import 'swiper/dist/css/swiper.min.css'
-// export default class Address extends Component{
-//     render(){
-//         return(
-//             <div className='banner'>
-//                 <div className='swiper-container'>
-//                     <div className='swiper-wrapper'>
-//                         <div className="swiper-slide"><img style={{width:"200px",height:"50px"}}  src="http://pic51.nipic.com/file/20141025/8649940_220505558734_2.jpg"/></div>
-//                     </div>
-//                     <div className="swiper-pagination"></div>
-//                 </div>
-//             </div>
-//         )
-//     }
-//     componentDidMount(){
-//         var mySwiper = new Swiper('.swiper-container',{
-//             loop : true,
-//             pagination: {
-//                 el: '.swiper-pagination',
-//             }
-//         })
-//     }
-// }
 import React,{Component} from "react"
-export default class Address extends Component{
+class Address extends Component{
+    constructor(){
+        super()
+        this.state={
+            one:[],
+        }
+    }
+
     render(){
         return(
-            <div>
-                Address
+            <div className="App">
+                <div className="nav">
+                    <span onClick={()=>{
+                        this.props.history.push("my")
+                    }}>&lt;</span>
+                    <span>配送地址</span>
+                    <span className="iconfont icon-gengduo"></span>
+                </div>
+                <div className="navy">
+                    <div className="navy_1">
+                        <p className="frame receiver">
+                            <span>收货人：</span>
+                            <input type="text" name="consignee"/>
+                        </p>
+                        <p className="frame tel">
+                            <span>手机号码：</span>
+                            <input type="text" name="mobile"  />
+                        </p>
+                        <p className="frame fixedTel">
+                            <span>固定电话（选填）：</span>
+                            <input type="text" name="fixedTel"/>
+                        </p>
+                        <div className="frame area">
+                            <span className="position">所在地区:</span>
+                            <div className="selectArea">
+                                <select  name="province" >
+                                    <option value={"0"}>请选择</option>
+                                </select>
+                                <select  name="city" >
+                                    <option value={"0"}>请选择</option>
+                                </select>
+                                <select  name="district">
+                                    <option value={"0"}>请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p className="frame street">
+                            <span>详细地址：</span>
+                            <input type="text" name="address" />
+                        </p>
+
+                    </div>
+                </div>
+                <input type="submit" className="btn" value={"确认"} style={{borderRadius: "5px"}}></input>
             </div>
         )
     }
+    componentDidMount(){
+        console.log(this.state.data)
+        //this.props.getAddress()
+        console.log(111111111111111111)
+
+    }
 }
+// function mapStateToProps(state){
+//     return{
+//         address:state.address
+//     }
+//
+//
+// }
+// function mapDispatchToProps(dispatch){
+//     return{
+//         // getAddress(){
+//         //     ///jiuxian/m_v1/dynamic/mob01ajax/151763?pageNum=2 "https://m.jiuxian.com
+//         //     //https://mmember.jiuxian.com/address/getRegionList?province_id=3
+//         //     axios.get("").then(({data})=>{
+//         //         console.log(data)
+//         //     })
+//         // }
+//
+//     }
+//
+// }
+export default Address;
+// export default Address(mapStateToProps,mapDispatchToProps) (Address);
