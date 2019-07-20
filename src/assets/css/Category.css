@@ -49,6 +49,7 @@
 }
 .detail i,.detail span{
     display: block;
+    text-align:center;
 }
 .detail span{
     font-size: 14px;
@@ -58,16 +59,20 @@
 .detail i{
     font-size: 36px;
 }
+.detail ul{
+    display:flex;
+    flex-wrap:wrap;
+}
 .detail li{
     width:33.33%;
     height: 80px;
     display: block;
-    float: left;
     text-decoration: none;
     color: #333;
     margin-top: 10px;
     border-bottom: .5px solid #ccc;
     border-right: .5px solid #ccc;
+    text-aligin:center;
 }
 .headSearch{
     width: 100%;

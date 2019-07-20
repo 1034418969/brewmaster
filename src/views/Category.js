@@ -86,6 +86,7 @@ export default class Category extends Component {
                 let qqq ="Grap/"+num;
                 console.log(qqq)
                 _this.props.history.push(qqq)
+                e.preventDefault();
             }
         }
     }
