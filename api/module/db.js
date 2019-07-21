@@ -35,7 +35,6 @@ module.exports.count = function (coll,whereObj,cb) {
 }
 /*根据ID进行删除*/
 module.exports.deleteOneById = function (coll,id,cb) {
-    console.log(id)
     _connect(function (db) {
         db.collection(coll).deleteOne({
             _id:mongodb.ObjectId(id)
@@ -44,7 +43,6 @@ module.exports.deleteOneById = function (coll,id,cb) {
 }
 /*根据ID进行修改*/
 module.exports.updateOneById = function (coll,id,upObj,cb) {
-    console.log(id,upObj)
     _connect(function (db) {
         db.collection(coll).updateOne({
             _id:mongodb.ObjectId(id)

@@ -3,9 +3,11 @@ import "../assets/css/Brewmaster.css"
 import TabBarExample from '../components/TabBarExample';
 import {
     BrowserRouter as Router,
+    withRouter
 } from "react-router-dom";
+
 import Routers from '../router'
-export default class test extends Component {
+ class test extends Component {
     render() {
         return (
             <div id="brewmaster">
@@ -19,3 +21,5 @@ export default class test extends Component {
         )
     }
 }
+
+  export default test

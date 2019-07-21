@@ -30,10 +30,6 @@ class Grap extends React.Component {
                         this.props.history.push("/category")
                     }}></span> <b className="iconfont icon-search" id="search_text">全场商品低至9.9元起</b><span
                     className="iconfont icon-caidan" onClick={() => {
-                    console.log(11111)
-                    // this.setState({
-                    //     isShow:!this.state.isShow
-                    // })
                     this.props.history.push("/two")
                 }}></span>
 
@@ -51,9 +47,6 @@ class Grap extends React.Component {
                     <span>CLUB会员价</span>
                 </div>
                 <hr className="hr"/>
-                {/*{*/}
-                {/*this.state.isShow?<Detail id={this.props.match.params.id}></Detail>:<Two></Two>*/}
-                {/*}*/}
 
                 <div>
                     {
@@ -83,7 +76,7 @@ class Grap extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.match.params)//{id:1}
+        console.log(this.props)//{id:1}
         this.getGoodsList()
     }
 

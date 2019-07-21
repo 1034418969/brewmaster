@@ -7,6 +7,12 @@ import Category from '../views/Category';
 import Grap from './Category/Grap.js'
 import Two from "./Category/Two"
 
+
+// 商品详情
+import Shop from "../views/Detail/Shop"
+
+
+// My
 import Login from "../views/My/Login"
 import free from "../views/My/free"
 import order from "../views/My/Order"
@@ -18,6 +24,7 @@ import initwallet from "../views/My/Initwallet"
 import collect from "../views/My/Collect"
 import address from "../views/My/Address"
 import usersafe from "../views/My/Usersafe"
+
 import Graps from "../router/Category/Grap.js";
 import Detail from '../views/Detail';
 
@@ -34,121 +41,150 @@ export default [
     {
         path: "/",
         component: Home,
-        exact: true
+        exact: true,
+        isShow:false
     },
     {
         path: "/home",
         component: Home,
-        exact: true
+        exact: true,
+        isShow:false
     },
     {
         path: "/my",
         component: My,
-        exact: true
+        exact: true,
+        isShow:true
     },
     {
         path: "/car",
         component: Car,
-        exact: true
+        exact: true,
+        isShow:true
     },
     {
         path: "/clearance",
         component: Clearance,
-        exact: true
+        exact: true,
+        isShow:false
     },
     {
         path: "/category",
         component: Category,
-        exact: true
+        exact: true,
+        isShow:false
     },
     {
         path: "/grap/:id",
         component: Grap,
-        exact: true
+        exact: true,
+        isShow:false
     }, {
         path: "/detail",
         component: Detail,
-        exact: true
+        exact: true,
+        isShow:false
     },
     {
         path:"/login",
         component:Login,
-        exact:true
+        exact:true,
+        isShow:true,
     },
     {
         path:"/free",
         component:free,
-        exact:true
+        exact:true,
+        isShow:true,
     },
     {
         path:"/order",
         component:order,
-        exact:true
+        exact:true,
+        isShow:true,
     },
     {
         path:"/exchangecode",
         component:exchangecode,
-        exact:true
+        exact:true,
+        isShow:true,
     },
     {
         path:"/toExchange",
         component:toExchange,
-        exact:true
+        exact:true,
+        isShow:true,
     },
     {
         path:"/bonus_list",
         component:bonus_list,
-        exact:true
+        exact:true,
+        isShow:true,
     },
     {
         path:"/history",
         component:history,
-        exact:true
+        exact:true,
+        isShow:true,
     },
     {
         path:"/initwallet",
         component:initwallet,
-        exact:true
+        exact:true,
+        isShow:true,
     },
     {
         path:"/collect",
         component:collect,
-        exact:true
+        exact:true,
+        isShow:true,
     },
     {
         path:"/address",
         component:address,
-        exact:true
+        exact:true,
+        isShow:true,
     },
     {
         path:"/usersafe",
         component:usersafe,
-        exact:true
+        exact:true,
+        isShow:true,
     },
     {
         path:"/grap/1",
         component:Graps,
-        exact:true
+        exact:true,
+        isShow:false
     },
     {
         path:"/two",
         component:Two,
-        exact:true
+        exact:true,
+        isShow:false
     },
     //首页的
     {
         path:"/search",
         component:Search,
-        exact:true
+        exact:true,
+        isShow:false
     },
     {
         path:"/gooddetail",
         component:Gooddetail,
-        exact:true
+        exact:true,
+        isShow:false
     },
     {
         path:"/secondbuy",
         component:SecondBuy,
-        exact:true
+        exact:true,
+        isShow:false
+    },{
+        path:"/shop",
+        component:Shop,
+        exact:true,
+        isShow:false
     }
 ]

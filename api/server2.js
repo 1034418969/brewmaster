@@ -26,7 +26,7 @@ app.post("/user", function (req, res) {
 // 登录
 app.post("/userlog", function (req, res) {
     db.findOne("user", {
-        username: req.body.username,
+        username: req.body.username ,
         password: req.body.password
     }, function (err, results) {
         if (results) {
@@ -47,7 +47,7 @@ app.post("/userlog", function (req, res) {
 app.post("/addCar", function (req, res) {
     // 
     const goods = req.body;
-    const username = goods.username;
+    const username = goods.username || 'root';
     db.findOne("CarList", {
         username,
         id: goods.id
@@ -76,8 +76,9 @@ app.post("/addCar", function (req, res) {
 
 // 获取购物车
 app.get("/Car", function (req, res) {
+    
     db.find("CarList", {
-        username: req.query.username,
+        "username": req.query.username,
     }, function (err, contextList) {
         if (err) {
             res.send({
@@ -118,7 +119,6 @@ app.put("/changecar", function (req, res) {
             })
         })
 });
-
 // 商品添加减
 app.put("/changeNum", function (req, res) {
     db.findOneById("CarList", req.body.id, (err, con) => {

@@ -9,7 +9,6 @@ class Gooddetail extends React.Component{
             goodinfo:[],
             city:[],
             isShow:false
-
         }
     }
     render(){

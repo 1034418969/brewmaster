@@ -29,8 +29,8 @@ class My extends Component{
         //         this.props.history.push("/Login");
         //     }
         this.forceUpdate();
-        if(!localStorage.user)
-            this.props.history.push("/login")
+        // if(!localStorage.user)
+            // this.props.history.push("/login")
     }
     render(){
         return (

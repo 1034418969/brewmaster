@@ -44,12 +44,9 @@ class Car extends Component {
                 bStop = false;
                 break;
             }
-        }
+        }       
         this.setState({
             allqx: bStop,
-        }, () => {
-            // this.sumNum()
-            // this.getCar();
         })
     }
     // 单选
@@ -70,7 +67,6 @@ class Car extends Component {
             }
         })
             .then(({ data }) => {
-                console.log(data)
                 this.setState({
                     allgoods: data.contextList
                 }, () => {
@@ -110,7 +106,6 @@ class Car extends Component {
     }
     // 跳转商品详情
     jmpDetail(goods) {
-        console.log(this)
         this.props.carDetail.bind(this,goods)()
         this.props.history.push("/detail")
     }

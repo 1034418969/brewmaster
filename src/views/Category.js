@@ -72,7 +72,9 @@ export default class Category extends Component {
             </div>
         )
     }
-
+    componentDidMount(){
+        console.log(55555,this.props.history)
+    }
 
 
     getIndex=(e)=>{
