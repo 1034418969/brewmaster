@@ -18,13 +18,17 @@ export default class exchangecode extends Component{
         return(
             <div className="mainBody">
                 <div style={{height: "0.4rem", background: "#FFF", color:" #000",
-                    display:"flex",justifyContent:"space-between",paddingLeft:"0.05rem",paddingRight:"0.05rem"}}>
-                    <i style={{marginTop:"0.1rem"}} className="iconfont icon-fanhui"></i>
+                    display:"flex",justifyContent:"space-between",paddingLeft:"0.05rem",paddingRight:"0.05rem",
+                    position: "fixed",zIndex: "999999", width: "98%"}}>
+                    <i onClick={()=>{
+                        this.props.history.push("/My")
+                    }} style={{marginTop:"0.1rem"}} className="iconfont icon-fanhui"></i>
                     <span style={{marginTop:"0.1rem",fontSize:".14rem",color:"#000"}}>待领取</span>
                     <i></i>
                 </div>
+                <div style={{height: "0.4rem"}}></div>
                 <div className="excFocus">
-                    <a href="https://m.jiuxian.com/m_v1/dynamic/mob01/151574">
+                    <a href="javascript:">
                         <img src="https://img10.jiuxian.com/bill/2019/0424/b9ef69bdf63546c8bd586b3b7e977c42.jpg" alt=""/>
                     </a>
                 </div>
@@ -41,9 +45,9 @@ export default class exchangecode extends Component{
                         <i className="iconfont icon-gengduo1"></i>
                     </h3>
                     <div className="excUserTab">
-                        <span style={{background:"#fff"}}>超值热卖</span>
-                        <span>特色美酒</span>
-                        <span>年中榜单</span>
+                        <span onClick={this.change.bind(this,1)} style={{background:"#fff"}}>超值热卖</span>
+                        <span onClick={this.change.bind(this,2)} style={{background:"#fff"}}>特色美酒</span>
+                        <span onClick={this.change.bind(this,3)} style={{background:"#fff"}}>年中榜单</span>
                     </div>
                     <div className="comList">
                         <ul>
@@ -51,7 +55,7 @@ export default class exchangecode extends Component{
                                 this.state.coods.map((v,i) => {
                                     return(
                                         <li key={v.goods_id}>
-                                            <a href="https://m.jiuxian.com/m_v1/goods/view/35638">
+                                            <a href="javascript:">
                                                 <div className="pic">
                                                     <img src={v.goods_thumb} alt=""/>
                                                 </div>
@@ -82,6 +86,18 @@ export default class exchangecode extends Component{
             this.setState({
                 coods:data.goodsCate.list
             })
+                console.log(11111)
+                console.log(data)
+                console.log(data.goodsCate.list)
+                console.log(this.state.coods)
+            })
+    }
+    change(num){
+        axios.get("https://m.jiuxian.com/m_v1/dynamic/mob01ajax/151763?pageNum="+num)
+            .then(({data})=>{
+                this.setState({
+                    coods:data.goodsCate.list
+                })
                 console.log(11111)
                 console.log(data)
                 console.log(data.goodsCate.list)

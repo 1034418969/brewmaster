@@ -11,6 +11,7 @@ class Login extends Component{
 
     render(){
         return (
+            <Router>
             <div className="logins">
             <div style={{height: "0.4rem", background: "#de4943", color:" #fff",
             display:"flex",justifyContent:"space-between",paddingLeft:"0.05rem",paddingRight:"0.05rem"}}>
@@ -55,6 +56,7 @@ class Login extends Component{
             </ul>
             </div>
             </div>
+            </Router>
 
     );
     }

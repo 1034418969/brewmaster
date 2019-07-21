@@ -15,7 +15,7 @@ export default class phoneLogin extends Component{
         }
     }
     sendLogin(){
-      
+        this.props.history.push("/my");
         // const userList = JSON.parse(localStorage.userList);
         // console.log(userList)
         // var arr1=[]
@@ -60,7 +60,7 @@ export default class phoneLogin extends Component{
                 </div>
                 <div className="identify">
                     <input type="text" placeholder="请输入效验码"/>
-                    <div className="yzm2">获取效验码</div>
+                    <div className="yzm2" style={{border:"solid 1px #626365"}}>获取效验码</div>
                 </div>
                 <input type="button" onClick={this.sendLogin.bind(this)} value={"立即登录"} className="loginUp" />
             </div>

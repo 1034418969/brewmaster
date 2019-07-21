@@ -27,19 +27,18 @@ export default class userLogin extends Component{
                     localStorage.user = this.state.user.value;
                     localStorage.password = this.state.password.value;
                     this.props.history.push("/my");
-               } 
+               }
                else
                 alert(data.msg)
-               
+
             })
         }else{
             alert("账号密码不能为空")
         }
-        
-        
     }
     render() {
         return (
+
             <div className="userLogin">
                 <span style={{width: "0.55rem", float: "left",
                     height: "0.02rem",

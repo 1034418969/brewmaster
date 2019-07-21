@@ -1,4 +1,4 @@
-/* .App {
+﻿/* .App {
   text-align: center;
 } */
 .App-logo {
@@ -423,15 +423,7 @@
    
   }
   
-  input[type=submit], input[type=button], input[type=text], input[type=password] {
-    -webkit-appearance: none;
-    box-sizing: content-box;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    outline: none;
-    font-family: Microsoft YaHei;
-  }
+
   
   
   input.btn {
