@@ -9,6 +9,7 @@ import {
 } from "react-redux"
 import axios from 'axios'
 import CarDetail from "../store/actionCreator/car"
+import Top from '../components/toprouter'
 
 class Car extends Component {
     constructor(props) {
@@ -44,7 +45,7 @@ class Car extends Component {
                 bStop = false;
                 break;
             }
-        }       
+        }
         this.setState({
             allqx: bStop,
         })
@@ -96,34 +97,36 @@ class Car extends Component {
         })
     }
     // 改变数量
-    changeNum(id,type) {
-        axios.put("/jx/changeNum",{
+    changeNum(id, type) {
+        axios.put("/jx/changeNum", {
             id,
             type
-        }).then(({data})=>{
+        }).then(({ data }) => {
             this.getCar()
         })
     }
     // 跳转商品详情
     jmpDetail(goods) {
-        this.props.carDetail.bind(this,goods)()
+        this.props.carDetail.bind(this, goods)()
         this.props.history.push("/detail")
     }
     // 删除购物车商品
-    delGoods(id){
-        axios.delete("/jx/Car",{
-            data:{
+    delGoods(id) {
+        axios.delete("/jx/Car", {
+            data: {
                 id
             }
         })
-        .then(({data})=>{
-            this.getCar();
-        })
+            .then(({ data }) => {
+                this.getCar();
+            })
     }
     render() {
         return (
             <div id="car">
+                
                 <div id="carList">
+                <Top></Top>
                     {/* 酒仙自营 */}
                     <div className="pucTitle">
                         {/* 全选 */}
@@ -145,12 +148,12 @@ class Car extends Component {
                                         <span className='pubIcon tureIcon' onClick={this.aloneChoice.bind(this, v._id, !v.choice)} className={v.choice ? 'pubIcon tureIcon' : ' pubIcon falseIcon'}></span>
                                         <div className="catShopInfo ">
                                             <div className="catImg ">
-                                                <img src={v.goodsImg} alt="" onClick={this.jmpDetail.bind(this,v)}/>
+                                                <img src={v.goodsImg} alt="" onClick={this.jmpDetail.bind(this, v)} />
                                                 {v.choice}
                                             </div>
                                             <div className="catInfo">
                                                 <h4 className="twoLineEllipsisCart">
-                                                    <span  onClick={this.jmpDetail.bind(this,v)}>{v.goodsTitle}</span>
+                                                    <span onClick={this.jmpDetail.bind(this, v)}>{v.goodsTitle}</span>
                                                 </h4>
                                                 <p>
                                                     <span>¥{v.curPrice * v.num}</span>
@@ -158,9 +161,9 @@ class Car extends Component {
                                                 </p>
                                                 <div className="rsCartItem">
                                                     <div className="comAmount">
-                                                        <a className="publicIcon minus on" onClick={this.changeNum.bind(this,v._id,-1)}>-</a>
+                                                        <a className="publicIcon minus on" onClick={this.changeNum.bind(this, v._id, -1)}>-</a>
                                                         <input className="inpVal" type="text" value={v.num} />
-                                                        <a className="publicIcon plus " onClick={this.changeNum.bind(this,v._id,1)}>+</a>
+                                                        <a className="publicIcon plus " onClick={this.changeNum.bind(this, v._id, 1)}>+</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -181,7 +184,7 @@ class Car extends Component {
                         <p className="colorTxt"><span>优惠：</span>￥<strong>0.00</strong></p>
                     </div>
                     <span>
-                        <a href="javascript:void(0)" className="delBtn">去结算<strong ref="sumNum">({this.state.sumNum})</strong></a>
+                        <a href="javascript:void(0)" className="delBtn" onClick={()=>this.props.history.push('/settlement')}>去结算<strong ref="sumNum">({this.state.sumNum})</strong></a>
                     </span>
                 </div>
             </div>
@@ -194,12 +197,12 @@ class Car extends Component {
 function mapStateToProps(state) {
     return {
         car: state.car,
-        goods:state.goods
+        goods: state.goods
     }
 }
 function mapDispatchToProps(dispatch) {
     // 列表跳转详情ClearAction
-    return bindActionCreators(CarDetail,dispatch)
+    return bindActionCreators(CarDetail, dispatch)
 }
 
 

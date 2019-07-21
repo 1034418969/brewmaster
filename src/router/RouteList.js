@@ -1,6 +1,7 @@
 import Home from '../views/Home';
 import My from '../views/My';
 import Car from '../views/Car';
+import Settlement from '../views/Settlement';//结算
 import Clearance from '../views/Clearance';
 import Category from '../views/Category';
 
@@ -59,6 +60,11 @@ export default [
     {
         path: "/car",
         component: Car,
+        exact: true,
+        isShow:true
+    },{
+        path: "/settlement",
+        component: Settlement,
         exact: true,
         isShow:true
     },

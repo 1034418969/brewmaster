@@ -41,6 +41,12 @@ module.exports.deleteOneById = function (coll,id,cb) {
         },cb)
     })
 }
+// 根据条件进行删除
+module.exports.delete = function (coll,obj,cb) {
+    _connect(function (db) {
+        db.collection(coll).deleteMany(obj,cb)
+    })
+}
 /*根据ID进行修改*/
 module.exports.updateOneById = function (coll,id,upObj,cb) {
     _connect(function (db) {

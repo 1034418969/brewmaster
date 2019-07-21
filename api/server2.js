@@ -26,7 +26,7 @@ app.post("/user", function (req, res) {
 // 登录
 app.post("/userlog", function (req, res) {
     db.findOne("user", {
-        username: req.body.username ,
+        username: req.body.username,
         password: req.body.password
     }, function (err, results) {
         if (results) {
@@ -76,7 +76,7 @@ app.post("/addCar", function (req, res) {
 
 // 获取购物车
 app.get("/Car", function (req, res) {
-    
+
     db.find("CarList", {
         "username": req.query.username,
     }, function (err, contextList) {
@@ -131,7 +131,7 @@ app.put("/changeNum", function (req, res) {
                         msg: "更新成功"
                     })
                 })
-        }else if(req.body.type === -1){
+        } else if (req.body.type === -1) {
             db.updateOneById("CarList", req.body.id,
                 { $set: { num: 0 } }
                 , function (err, result) {
@@ -145,7 +145,7 @@ app.put("/changeNum", function (req, res) {
 });
 
 
-
+// 删除商品
 app.delete("/Car", function (req, res) {
     db.deleteOneById("CarList", req.body.id, function (err, results) {
         res.json({
@@ -153,6 +153,25 @@ app.delete("/Car", function (req, res) {
             msg: "删除成功"
         })
     })
+})
+// 计算购物车
+app.delete("/Carjs", function (req, res) {
+        db.delete("CarList",{
+            username: req.body.user,
+            choice: true
+        },function(err,con){
+            if (!err) {
+                res.json({
+                    ok: 1,
+                    msg: "购买成功"
+                })
+            } else {
+                res.json({
+                    ok: -1,
+                    msg: "购买失败"
+                })
+            }
+        })
 })
 
 app.listen(80, function () {

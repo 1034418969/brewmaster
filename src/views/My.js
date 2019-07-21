@@ -44,6 +44,7 @@ class My extends Component{
                     <span style={{marginTop:"0.1rem",fontSize:".14rem"}}>个人中心</span>
                     <i style={{marginTop:"0.1rem"}} className="iconfont icon-gengduo"></i>
                 </div>
+                
                 <div style={{height: "0.4rem"}}></div>
                 <div className="my">
                     <div className="bg">

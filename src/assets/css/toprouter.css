@@ -1,0 +1,16 @@
+#toprou{
+    height: 0.45rem;
+    color:#928f8f;
+    border-bottom: 1px solid #928f8f;
+}
+#toprou>div{
+    height: 0.45rem;
+    font-size: 14px;
+    text-align: center;
+    width: 0.93rem;
+    float: left;
+}
+#toprou>div>.iconfont{
+    font-size: 20px;
+    display:block;
+}
