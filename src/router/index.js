@@ -1,26 +1,20 @@
 import React, { Component } from 'react'
 import {
-    Route,
     withRouter
 } from "react-router-dom";
-import RouteList from './RouteList'
-import Tz from './tz'
- class route extends Component {
-    
+class tz extends Component {
     render() {
         return (
-            <div>
-                {
-                    RouteList.map((v, i) => {
-                        return (<Route path={v.path} exact={v.exact}  render={()=><Tz {...v}></Tz>} key={i}></Route>)
-                    })
-                }
-            </div>
-
+            <this.props.component history={this.props.history}></this.props.component>
         )
     }
     componentDidMount(){
-        console.log(this.props,6611161)
+        if(this.props.isShow){
+            if(!localStorage.user){
+                this.props.history.push("/login")
+            }
+        }
+        
     }
 }
-export default withRouter(route)
+export default withRouter(tz)

@@ -21,12 +21,22 @@ export default {
                                 pageNum
                             }
                         })
-                        dispatch({
-                            type: "CLEAR_ISLOADING",
-                            payload: {
-                                isLoading: false
-                            }
-                        })
+                        if(pageNum<6){
+                            dispatch({
+                                type: "CLEAR_ISLOADING",
+                                payload: {
+                                    isLoading: false
+                                }
+                            })
+                        }else{
+                            dispatch({
+                                type: "CLEAR_ISLOADING",
+                                payload: {
+                                    isLoading: true
+                                }
+                            })
+                        }
+                        
                     })
 
         })

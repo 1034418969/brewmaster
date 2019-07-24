@@ -495,6 +495,7 @@ export default class Home extends Component {
         )
     }
     componentDidMount(){
+      
         axios.get("/jiuxian/m_v1/promote/qgajax.do?t=1562724773679&pagenum=1&tabnum=1")
             .then(({data}) => {
                 // console.log("12324324",data)
