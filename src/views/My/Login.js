@@ -62,6 +62,8 @@ class Login extends Component{
     }
     zhuce(){
         this.props.history.push("/free")
+        
+        console.log(this.props)
     }
     goback(){
         this.props.history.push("/")

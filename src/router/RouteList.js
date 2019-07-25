@@ -101,7 +101,7 @@ export default [
         path:"/free",
         component:free,
         exact:true,
-        isShow:true,
+        isShow:false,
     },
     {
         path:"/order",
