@@ -34,6 +34,7 @@ import Detail from '../views/Detail';
 import Gooddetail from "../components/common/gooddetail.js";
 import Search from "../components/common/search.js";
 import SecondBuy from "../views/Home/SecondBuy.js"
+import Topic from "../views/Home/topic.js"
 
 
 
@@ -173,24 +174,21 @@ export default [
     {
         path:"/search",
         component:Search,
-        exact:true,
-        isShow:false
+        exact:true
     },
     {
         path:"/gooddetail",
         component:Gooddetail,
-        exact:true,
-        isShow:false
+        exact:true
     },
     {
         path:"/secondbuy",
         component:SecondBuy,
-        exact:true,
-        isShow:false
-    },{
-        path:"/shop",
-        component:Shop,
-        exact:true,
-        isShow:false
+        exact:true
+    },
+    {
+        path:"/topic/:typeNum/:pageNum",
+        component:Topic,
+        exact:true
     }
 ]
